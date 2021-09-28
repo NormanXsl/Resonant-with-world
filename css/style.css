@@ -10,7 +10,6 @@ body
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     color: #000000;
-    background: grey;
 }
 
 ul{
@@ -26,6 +25,7 @@ ul{
         right: 0;
         background: white;
         border-radius: 4px;
+		z-index: 3;
         
 	}
 	
@@ -46,7 +46,7 @@ ul{
 		padding: 1em 1.5em;
 		letter-spacing: 0.20em;
 		text-decoration: none;
-		font-size: 0.90em;
+		font-size: 1vw;
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
@@ -73,4 +73,88 @@ ul{
         color: white;
     }
 
-    
+    #one{
+		height: 100vh;
+		width: 100%;
+		background: rgb(231, 231, 231);
+
+	}
+
+
+	#Title{
+		text-align: center;
+		position: absolute;
+		top: 30%;
+		left: 0;
+		right: 0;
+		font-family: 'Rubik', sans-serif;
+		font-weight: 800;
+		font-size: 2.5vw;
+		color: rgb(127, 21, 165);
+		text-transform:capitalize;
+		
+	}
+
+	#subtitle{
+		text-align: center;
+		position: absolute;
+		top: 45%;
+		left: 0;
+		right: 0;
+		font-family: 'Rubik', sans-serif;
+		font-weight: 500;
+		font-size: 1.5vw;
+		color: rgba(245, 217, 255, 0.8);
+		text-transform:lowercase;
+		
+	}
+	video.background{
+		left: 0PX;
+		top: 0px;
+		width: 100%;
+		height: 100vh;
+		object-fit:fill;
+
+
+	 }
+
+
+	
+
+	#copyright
+	{
+		padding: 0.5em 0em;
+		text-align: center;
+		color:rgba(91,9,121,1) ;
+	}
+	
+	#copyright p
+	{
+		letter-spacing: 0.20em;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 0.8vw;
+	}
+	
+	#copyright a
+	{
+		text-decoration: none;
+		color: rgba(255,255,255,0.6);
+	}
+
+	.box1{
+		padding: 0.5em 0em;
+	}
+
+	#copyright h2
+	{
+		margin: 0;
+		color: rgba(4,0,66,1);
+		font-size: 1.5vw;
+	}
+
+	#disclaimer{
+		text-decoration: underline;
+		color:rgba(91,9,121,0.2) ;
+	
+	}
