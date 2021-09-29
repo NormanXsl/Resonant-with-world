@@ -1,10 +1,13 @@
+<?php session_start();
+include("connection.php");
+/** @var PDO $dbh */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= "./css/style.css" />
+    <link rel="stylesheet" href= "../css/style.css" />
     <title>Document</title>
 </head>
 <body>
@@ -13,10 +16,10 @@
             <div id="menu">
                 <li class="logo"><a href="#">Resonant with world</a></li>
                 <ul>
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="../index.html" >Home</a></li>
                     <li><a href="#" >Product</a></li>
-                    <li><a href="client.html">Client</a></li>
-                    <li><a href="category.html" >Category</a></li>
+                    <li><a href="client.php">Client</a></li>
+                    <li><a href="category.php" >Category</a></li>
                 </ul>
             </div>
     </section>
