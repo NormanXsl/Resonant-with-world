@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2021 at 04:57 AM
+-- Generation Time: Sep 29, 2021 at 05:39 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -75,8 +75,7 @@ CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `product_UPC` varchar(12) NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_price` float(5,2) NOT NULL,
-  `product_category` varchar(255) NOT NULL
+  `product_price` float(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
