@@ -59,7 +59,7 @@ CREATE TABLE `photo_shoot` (
   `photo_shoot_id` int(11) NOT NULL,
   `photo_shoot_name` varchar(255) NOT NULL,
   `photo_shoot_description` varchar(255) NOT NULL,
-  `photo_shoot_datetime` date NOT NULL,
+  `photo_shoot_datetime` varchar(255) NOT NULL,
   `photo_shoot_quote` varchar(30) NOT NULL,
   `photo_shoot_other_information` varchar(255) DEFAULT NULL,
   `client_fk` int(11) NOT NULL
