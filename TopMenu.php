@@ -20,18 +20,18 @@ require('connection.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href= "./css/style.css" />
-    <title>Document</title>
+    <title>Resonant With World</title>
 </head>
 <body>
     <section id="header-wrapper">
         <div id="header" class="container">
             <div id="menu">
-                <li class="logo"><a href="#">Resonant with world</a></li>
+                <li class="logo"><a href="index.php">Resonant with world</a></li>
                 <ul>
-                    <li><a href="#" >Home</a></li>
-                    <li><a href="#" >Product</a></li>
-                    <li><a href="#" >Client</a></li>
-                    <li><a href="#" >Category</a></li>
+                    <li <?= ($PAGE_ID == 'home') ? ' active' : '' ?>"><a href="index.php" >Home</a></li>
+                    <li <?= ($PAGE_ID == 'products') ? ' active' : '' ?>"><a href="products.php" >Product</a></li>
+                    <li <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a href="client.php" >Client</a></li>
+                    <li <?= ($PAGE_ID == 'category' ) ? ' active' : '' ?>"><a href="category.php" >Category</a></li>
                 </ul>
                 <?php if (empty($PAGE_USERNAME)): ?>
                         <li class="nav-item">
@@ -48,5 +48,3 @@ require('connection.php');
                     <?php endif; ?>
             </div>
     </section>
-</body>
-</html>
