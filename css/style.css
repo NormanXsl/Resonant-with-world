@@ -79,6 +79,23 @@ ul{
 		background: rgb(231, 231, 231);
 	}
 
+	#menu .nav-item a{
+		border:2px solid rgba(91,9,121,1);
+		color: rgba(91,9,121,1);
+		border-radius: 8px;
+        position: absolute;
+		right: 2em;
+		top: 1em;
+		padding: 0.8vw;
+	}
+
+	  
+	#menu .nav-item a:hover {
+		background-color: rgba(91,9,121,1);
+		border: 0px;
+		color: white;
+	  }
+
 
 	#Title{
 		text-align: center;
