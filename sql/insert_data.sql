@@ -53,7 +53,7 @@ INSERT INTO `product` (`product_id`, `product_UPC`, `product_name`, `product_pri
 
  
 INSERT INTO `photo_shoot` (`photo_shoot_id`, `photo_shoot_name`, `photo_shoot_description`, `photo_shoot_date', 'photo_shoot_time`, `photo_shoot_quote`, `photo_shoot_other_information`, `client_fk`) VALUES
-(1, 'Highschool Graduation photoshoot', 'Graduation photoshoot that consists of two individuals, the sons of the client', 'Oct 2, 2021 9:15', '83585551617', '', 1),
+(1, 'Highschool Graduation photoshoot', 'Graduation photoshoot that consists of two individuals, the sons of the client', 'Oct 2, 2021', '9:15', '83585551617', '', 1),
 (2, 'Vacation photoshoot', '', 'Feb 15, 2022', '13:00', '74282448472', '', 2),
 (3, 'Wedding photoshoot', '', 'Jun 25, 2022', '9:00','93390536576' ,'' , 3),
 (4, 'Music video photoshoot', '', 'Oct 31, 2021', '10:00', '47854461697' ,'client available only in October' , 4),
