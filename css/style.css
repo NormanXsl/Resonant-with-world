@@ -76,7 +76,7 @@ ul{
     #one{
 		height: 100vh;
 		width: 100%;
-		background: rgb(231, 231, 231);
+		background: rgb(246, 246, 246);
 	}
 
 	#menu .nav-item a{
@@ -124,6 +124,64 @@ ul{
 		text-transform:lowercase;
 		
 	}
+
+	.table-bordered {
+		border: 1px solid #e3e6f0;
+	}
+	
+	.table-bordered th,
+	.table-bordered td {
+		border: 1px solid #e3e6f0;
+	}
+	
+	.table-bordered thead th,
+	.table-bordered thead td {
+		border-bottom-width: 2px;
+	}
+
+	.text-align-right {
+		text-align: right;
+	  }
+
+	.button-text
+	{
+		font-family: 'Rubik', sans-serif;
+		display: inline-block;
+		margin-left: 0.50em;	
+		letter-spacing: 0.20em;
+		text-decoration: none;
+		font-size: 0.7vw;
+		font-weight: 600;
+		text-transform: uppercase;
+		outline: 0;
+		color: white;
+	}
+
+	.title-text
+	{
+		font-family: 'Rubik', sans-serif;
+		display: inline-block;
+		margin-left: 0.50em;	
+		letter-spacing: 0.20em;
+		text-decoration: none;
+		font-size: 24px;
+		font-weight: 600;
+		text-transform: uppercase;
+		outline: 0;
+		color: rgb(0, 0, 0);
+	}
+
+	.text
+	{
+		font-family: 'Rubik', sans-serif;
+		margin-left: 0.50em;	
+		display: inline-block;
+		text-decoration: none;
+		font-size: 1vw;
+		font-weight: 600;
+		outline: 0;
+		color: rgb(0, 0, 0);
+	}
 	video.background{
 		left: 0PX;
 		top: 0px;
@@ -133,9 +191,19 @@ ul{
 
 
 	 }
+	#body-section{
+		height: 100vh;
+		width: 100%;
+	}
+	#page-body 
+	{
+		position: absolute;
+		top: 20%;
+		left: 0;
+		right: 0;
+		font-family: 'Rubik', sans-serif;
 
-
-	
+	}
 
 	#copyright
 	{
@@ -161,7 +229,60 @@ ul{
 	.box1{
 		padding: 0.5em 0em;
 	}
+	.delete-button {
+		background-color: #ff0000;
+		border: none;
+		color: white;
+		padding: 9px 13px;
+		text-align: center;
+		font-size: 13px;
+		margin: 4px 2px;
+		opacity: 0.65;
+		transition: 0.3s;
+		display: inline-block;
+		text-decoration: none;
+		cursor: pointer;
+	  }
+	.delete-button:hover {opacity: 1}
+	
+	.add-button {
+		background-color: #02c20b;
+		border: none;
+		color: white;
+		padding: 9px 13px;
+		text-align: center;
+		font-size: 13px;
+		margin: 4px 2px;
+		opacity: 0.65;
+		transition: 0.3s;
+		display: inline-block;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.add-button:hover {opacity: 1}
 
+	.edit-button {
+		background-color: #026cc2;
+		border: none;
+		color: white;
+		padding: 9px 13px;
+		text-align: center;
+		font-size: 13px;
+		margin: 4px 2px;
+		opacity: 0.65;
+		transition: 0.3s;
+		display: inline-block;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	.edit-button:hover {opacity: 1}
+
+
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
 	#copyright h2
 	{
 		margin: 0;
