@@ -1,11 +1,27 @@
 # FIT2104 Assignment 2
-## Resonant with world web app
 
 A web application designed for the company, Resonant with World
+## Resonant with world web app
+
+Repository link: https://git.infotech.monash.edu/fit2104-cl/fit2104-2021-s2/pair_lab04_lee_05/fit2104_assignment_2
+
 
 Developers of this web app are listed as follows:
-- Sovathanak Meas
-- Shilong Xiao
-- Tianyao Ma
+- Name: Sovathanak Meas, StudentID: 29400090
+- Name: Shilong Xiao, StudentID: 
+- Name: Tianyao Ma, StudentID:
+
+## Credentials to access the web page:
+
+Username: annas
+password: annas
+
+## Contribution of members:
+#### Sovathanak Meas 
+- Client page
+- Category page
+
+#### Shilong Xiao
 
 
+#### Tianyao Ma
