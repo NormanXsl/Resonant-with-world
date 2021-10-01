@@ -163,7 +163,8 @@ INSERT INTO `product_image` (`image_id`, `product_image_filename`, `product_fk`)
 (44, '222.png', 22);
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'Kim', '', 'odio.phasellus@metusurna.edu'),
-(2, 'Kyrie', '+8x.X8{,5p^!rB!m', 'velit.justo@phasellus.org'),
-(3, 'Norton', 'HtR>gmb4%=MTKZ2Z', 'aenean@risus.com'),
-(4, 'Marius', 'Vx=)cjj>72QvxEQ2', 'purus@integerinmagna.net');
+(1, 'annas', SHA2('annas', 256), 'anna.sola@gmail.com'),
+(2, 'kyrie', SHA2('kyrie', 256), 'krie123@gmail.com'),
+(3, 'norton', SHA2('norton', 256), 'norton.n@gmail.com'),
+(4, 'marius', SHA2('marius', 256), 'marius.m@gmail.com');
+
