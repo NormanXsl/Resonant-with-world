@@ -16,7 +16,7 @@ require('TopMenu.php'); ?>
 
         <?php $clients = $dbh->prepare("SELECT * FROM `client`");
                     if ($clients->execute() && $clients->rowCount() > 0): ?>
-                        <table class = 'center table-bordered' width="100%" cellspacing="0">
+                        <table class = 'center table-bordered' width="90%" cellspacing="0">
                             <thead>
                             <tr>
                                 <th><span class = 'text'>ID</span></th>
@@ -36,6 +36,7 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'text'><?= $client->client_id ?></span></td>
                                     <td><span class = 'text'><code><?= $client->client_fname ?></code></span></td>
                                     <td><span class = 'text'><code><?= $client->client_lname ?></code></span></td>
+                                    <td><span class = 'text'><code><?= $client->client_address ?></code></span></td>
                                     <td><span class = 'text'><code><?= $client->client_phone ?></code></span></td>
                                     <td><span class = 'text'><code><?= $client->client_email ?></code></span></td>
                                     <td><span class = 'text'><code><?= $client->client_subscribed ?></code></span></td>
@@ -49,7 +50,7 @@ require('TopMenu.php'); ?>
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <p class="mb-4">There are no other categories in the database. </p>
+                        <p class="mb-4">There are no other client information in the database. </p>
                     <?php endif; ?>
     </div>
 </section>
