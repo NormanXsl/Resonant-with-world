@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2021 at 05:39 AM
+-- Generation Time: Oct 01, 2021 at 03:49 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `assignment_database`
+-- Database: `fit2104_assignment2`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `client` (
   `client_phone` varchar(16) NOT NULL,
   `client_email` varchar(255) NOT NULL,
   `client_subscribed` tinyint(1) NOT NULL,
-  `client_other_information` varchar(255) DEFAULT NULL
+  `client_other_information` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -58,10 +58,11 @@ CREATE TABLE `client` (
 CREATE TABLE `photo_shoot` (
   `photo_shoot_id` int(11) NOT NULL,
   `photo_shoot_name` varchar(255) NOT NULL,
-  `photo_shoot_description` varchar(255) NOT NULL,
-  `photo_shoot_datetime` varchar(255) NOT NULL,
+  `photo_shoot_description` text NOT NULL,
+  `photo_shoot_date` varchar(255) NOT NULL,
+  `photo_shoot_time` varchar(255) NOT NULL,
   `photo_shoot_quote` varchar(30) NOT NULL,
-  `photo_shoot_other_information` varchar(255) DEFAULT NULL,
+  `photo_shoot_other_information` text DEFAULT NULL,
   `client_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -75,7 +76,7 @@ CREATE TABLE `product` (
   `product_id` int(11) NOT NULL,
   `product_UPC` varchar(12) NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_price` float(5,2) NOT NULL
+  `product_price` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -97,7 +98,7 @@ CREATE TABLE `product_category` (
 
 CREATE TABLE `product_image` (
   `image_id` int(11) NOT NULL,
-  `product_image_filename` varchar(255) NOT NULL,
+  `product_image_filename` text NOT NULL,
   `product_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -128,7 +129,8 @@ ALTER TABLE `category`
 -- Indexes for table `client`
 --
 ALTER TABLE `client`
-  ADD PRIMARY KEY (`client_id`);
+  ADD PRIMARY KEY (`client_id`),
+  ADD UNIQUE KEY `client_email` (`client_email`);
 
 --
 -- Indexes for table `photo_shoot`
@@ -162,7 +164,9 @@ ALTER TABLE `product_image`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
