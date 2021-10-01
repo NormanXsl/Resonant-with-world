@@ -28,7 +28,7 @@ if (!isset($PAGE_ID) || $PAGE_ID !== 'login') {
         if ($user_stmt->execute([$_SESSION['user_id']]) && $user_stmt->rowCount() == 1) {
             // Get user information, so it can be displayed on the interface
             $user = $user_stmt->fetchObject();
-            $PAGE_USERNAME = $user->fullname;
+            $PAGE_USERNAME = $user->username;
         } else {
             //User is invalid in the system (deleted from the users table)
             session_destroy();
