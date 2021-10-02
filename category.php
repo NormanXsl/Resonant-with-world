@@ -1,7 +1,6 @@
 <?php
 $PAGE_ID = "category";
 $PAGE_HEADER = "Product Categories";
-$PAGE_ALLOWGUEST = false;
 /** @var PDO $dbh Database connection */
 
 require('TopMenu.php'); ?>
@@ -28,8 +27,8 @@ require('TopMenu.php'); ?>
                             <tbody>
                             <?php while ($category = $categories->fetchObject()): ?>
                                 <tr>
-                                    <td><span class = 'text'><?= $category->category_id ?></span></td>
-                                    <td><span class = 'text'><code><?= $category->category_name ?></code></span></td>
+                                    <td><span class = 'table-text'><?= $category->category_id ?></span></td>
+                                    <td><span class = 'table-text'><code><?= $category->category_name ?></code></span></td>
                                     <td align = 'center'>
                                             <a class="edit-button" href="category_edit.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit</span></a>
                                             <button type="submit" class = 'delete-button' name="cateogry_id" value="<?= $category->category_id ?>"><span class = 'button-text'>Delete</span></button>

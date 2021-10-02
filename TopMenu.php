@@ -30,8 +30,19 @@ require('connection.php');
                 <ul>
                     <li <?= ($PAGE_ID == 'home') ? ' active' : '' ?>"><a href="index.php" >Home</a></li>
                     <li <?= ($PAGE_ID == 'products') ? ' active' : '' ?>"><a href="products.php" >Product</a></li>
-                    <li <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a href="client.php" >Client</a></li>
-                    <li <?= ($PAGE_ID == 'category' ) ? ' active' : '' ?>"><a href="category.php" >Category</a></li>
+                    <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 
+                    <div class="dropdown-content">
+                        <a <?= ($PAGE_ID == 'client') ? ' active' : '' ?> href = 'client.php'>List all clients</a>
+                        <a <?= ($PAGE_ID == 'client add') ? ' active' : '' ?> href = 'client_add.php'>Add new clients</a>
+                        <a <?= ($PAGE_ID == 'email send') ? ' active' : '' ?> href = 'email.php'>Send email to clients</a>
+                    </div>
+                    </li>
+                    <li class = dropdown <?= ($PAGE_ID == 'category' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Category</a>
+                    <div class="dropdown-content">
+                        <a <?= ($PAGE_ID == 'category') ? ' active' : '' ?> href = 'category.php'>List all categories</a>
+                        <a <?= ($PAGE_ID == 'category add') ? ' active' : '' ?> href = 'category_add.php'>Add new category</a>
+                    </div>
+                </li>
                 </ul>
                 <?php if (empty($PAGE_USERNAME)): ?>
                         <li class="nav-item">

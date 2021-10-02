@@ -2,15 +2,11 @@
 $PAGE_ID = "email";
 $PAGE_HEADER = "Sending email to users";
 
-require('header.php');
+require('TopMenu.php');
 
 /** @var PDO $dbh Database connection */
 ?>
 
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-
-        <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800 pb-2">Sending email to users</h1>
         <p class="mb-4">This page allows you to send bulk email to all selected users. </p>
         <form method="post" action="email_send.php" id="send-emails">
@@ -20,33 +16,40 @@ require('header.php');
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <?php $users_stmt = $dbh->prepare("SELECT * FROM `users`");
-                        if ($users_stmt->execute() && $users_stmt->rowCount() > 0): ?>
-                            <table class="table table-bordered" width="100%" cellspacing="0">
+                        <?php $clients = $dbh->prepare("SELECT * FROM `client` WHERE client_subscribed = 1");
+                        if ($clients->execute() && $clients->rowCount() > 0): ?>
+                            <table class="center table-bordered" width="90%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Send?</th>
-                                    <th>Username</th>
-                                    <th>Full Name</th>
-                                    <th>Email Address</th>
+                                    <th><span class = 'text'>Send?</span></th>
+                                    <th><span class = 'text'>First Name</span></th>
+                                    <th><span class = 'text'>Last Name</span></th>
+                                    <th><span class = 'text'>Address</span></th>
+                                    <th><span class = 'text'>Phone</span></th>
+                                    <th><span class = 'text'>Email Address</span></th>
+                                    <th><span class = 'text'>Additional Information</span></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php while ($user = $users_stmt->fetchObject()): ?>
+                                <?php while ($client = $clients->fetchObject()): ?>
                                     <tr>
-                                        <td class="table-cell-center">
-                                            <input type="checkbox" name="user_ids[]" class="emails-to-send" value="<?php echo $user->id; ?>" />
+                                        <td align = 'center'>
+                                            <input type="checkbox" name="client_ids[]" class="emails-to-send" value="<?php echo $client->client_id; ?>" />
                                         </td>
-                                        <td><code><?= $user->username ?></code></td>
-                                        <td><?= $user->fullname ?></td>
-                                        <td><a href="mailto:<?= $user->email ?>"><?= $user->email ?></a></td>
+                                        <td><span class = 'table-text'><?= $client->client_fname ?></span></td>
+                                        <td><span class = 'table-text'><?= $client->client_lname ?></span></td>
+                                        <td><span class = 'table-text'><?= $client->client_address ?></span></td>
+                                        <td><span class = 'table-text'><?= $client->client_phone ?></span></td>
+                                        <td><a href="mailto:<?= $client->client_email ?>"><?= $client->client_email ?></a></td>
+                                        <td><span class = 'table-text'><?= $client->client_other_information ?></span></td>
+
                                     </tr>
                                 <?php endwhile; ?>
                                 </tbody>
                             </table>
 
                         <?php else: ?>
-                            <p class="mb-4">There's no user in the database. </p>
+                            <p class="mb-4">No clients subscribed. </p>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -62,13 +65,12 @@ require('header.php');
                     </div>
                     <div class="form-group">
                         <label for="sendmailMessage">Message body</label>
-                        <textarea class="form-control" id="sendmailMessage" name="body" rows="5" placeholder="Hi, &#10;&#10;...&#10;&#10;Regards" required></textarea>
+                        <textarea class="form-control" id="sendmailMessage" name="body" rows="5" placeholder="Dear Valued Customer, &#10;&#10;...&#10;&#10;Cheers, Resonant With World Pty Ltd." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send email</button>
+                    <button type="submit" class="btn btn-blue"><span class = 'button-text'>Send</span></button>
                 </div>
             </div>
         </form>
     </div>
-    <!-- /.container-fluid -->
 
-<?php require('footer.php'); ?>
+<?php require('Footer.php'); ?>
