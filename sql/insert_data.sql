@@ -3,7 +3,7 @@ INSERT INTO `client` (`client_id`, `client_fname`, `client_lname`, `client_addre
 (2, 'Desmond', 'Millers', '979-7239 Donec Rd.', '(06) 1247 9875', 'desmond12@gmail.com', 0, 'prefer contact via phone call'),
 (3, 'Ezio', 'Auditore', '2165 Proin St.', '(03) 3078 6348', 'ezio41@gmail.com', 0, 'prefers contact via email'),
 (4, 'Barrack', 'Obama', '3750 Interdum. Rd.', '(07) 6110 5242', 'bobama2@gmail.com', 1, ''),
-(5, 'Bob', 'Muyskens', 'P.O. Box 512, 4316 Nibh Ave', '(06) 0212 5971', '"bobm221@gmail.com', 0, ''),
+(5, 'Bob', 'Muyskens', 'P.O. Box 512, 4316 Nibh Ave', '(06) 0212 5971', 'bobm221@gmail.com', 0, ''),
 (6, 'Wade', 'Barnes', '795-9308 Egestas. Av.', '(01) 8580 7419', 'wba213@gmail.com', 0, ''),
 (7, 'Mark', 'Fischbach', '243 Woodland Avenue', '(06) 6565 1725', 'mfish214@gmail.com', 0, ''),
 (8, 'Ellen', 'Fox', 'P.O. Box 542, 4256 Sollicitudin Street', '(05) 4047 9934', 'elefox214@gmail.com', 0, ''),
