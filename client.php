@@ -6,7 +6,7 @@ require('TopMenu.php'); ?>
 
     <div id = page-body>
             <h2 class = 'title-text'>List of Categories
-                <a href="client_add.php" class = 'add-button'>
+                <a href="client_add.php" class = 'btn btn-green'>
                 <span class="button-text text-align-right">Add New Client</span>
                 </a>
             </h2><br>
@@ -42,7 +42,7 @@ require('TopMenu.php'); ?>
                                     <td align = 'center'>
                                             <a class="btn btn-green" href="client_detail.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>View</span></a>
                                             <a class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit</span></a>
-                                            <button type="submit" class = 'btn btn-red' name="client_id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
+                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class = 'btn btn-red' name="client_id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

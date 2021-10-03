@@ -23,6 +23,7 @@ if (!(isset($client_fetched) && $client_fetched)) {
     exit;
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $modifiedClientId = $client->client_id;
 
     if (!empty($_POST['client_fname']) &&
@@ -33,13 +34,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         !empty($_POST['client_subscribed']) &&
         !empty($_POST['client_other_information'])) {
 
+        $serverSideErrors = [];
+
+
         // As we'll need to do multiple queries, and need to check if all files are uploaded correctly
         // Better to do a transaction that allows us to revert if any error occurs
         $dbh->beginTransaction();
 
         // Update product details
         $query = "UPDATE `client` SET `client_fname` = ?, `client_lname` = ?, `client_address` = ?, `client_phone` = ?,
-         `client_email` = ?,  `client_subscribed` = ?,  `client_other_information` = ? WHERE `id` = ?";
+         `client_email` = ?,  `client_subscribed` = ?,  `client_other_information` = ? WHERE `client_id` = ?";
         $stmt = $dbh->prepare($query);
         $parameters = [
             $_POST['client_fname'],
@@ -51,6 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             empty($_POST['client_other_information']) ? null : $_POST['client_other_information'],
             $modifiedClientId
         ];
+
+        if (empty($serverSideErrors)) {
+            $dbh->commit();
+            header("Location: client_detail.php?id=" . $modifiedClientId);
+            exit();
+        } else {
+            $dbh->rollBack();
+            $ERROR = implode("</li><li>", $serverSideErrors);
+        }
+
     }
 }
 
@@ -69,34 +83,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </code></div>
             </div>
         <?php endif; ?>
-        <form method="post" id="add-clients" enctype="multipart/form-data">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="clientName">First Name</label>
-                <div class="input-group">
-                <input type="text" class="form-control" id="clientName" name="firstName" maxlength="64" required value="<?= empty($_POST['client_fname']) ? $client->client_fname : $_POST['client_fname'] ?>">
+        <form method="post" id="edit-clients" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="clientFName">First Name</label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="client_fname" name="firstName" maxlength="64" required value="<?= empty($_POST['client_fname']) ? $client->client_fname : $_POST['client_fname'] ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="clientLName">Last Name</label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="client_lname" name="lastName" maxlength="64" required value="<?= empty($_POST['client_lname']) ? $client->client_lname : $_POST['client_lname'] ?>">
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="clientName">Last Name</label>
-                <div class="input-group">
-                <input type="text" class="form-control" id="clientName" name="lastName" maxlength="64" required value="<?= empty($_POST['client_lname']) ? $client->client_lname : $_POST['client_lname'] ?>">
+
+                <div class="form-group">
+                    <label for="clientAddress">Address</label>
+                    <input type="text" class="form-control" id="client_address" name="address" maxlength="64" required value="<?= empty($_POST['client_address']) ? $client->client_address : $_POST['client_address'] ?>">
                 </div>
-            </div>
-        </div>
-
-            <div class="form-group">
-                <label for="clientName">Address</label>
-                <input type="text" class="form-control" id="clientName" name="address" maxlength="64" required value="<?= empty($_POST['client_address']) ? $client->client_address : $_POST['client_address'] ?>">
-            </div>
-            <div class="form-group">
-                <label for="clientDescription">Phone</label>
-                <textarea class="form-control" id="clientDescription" name="phone" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-blue">Submit changes</button>
+                <div class="form-group">
+                    <label for="clientPhone">Phone</label>
+                    <textarea class="form-control" id="client_phone" name="phone" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Phone</label>
+                    <textarea class="form-control" id="client_phone" name="phone" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
+                </div>
+                <button type="submit" class="btn btn-blue">Submit changes</button>
         </form>
     </div>
-    <!-- /.container-fluid -->
 
-<?php require('footer.php'); ?>
+<?php require('Footer.php'); ?>
