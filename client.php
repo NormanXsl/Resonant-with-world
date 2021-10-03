@@ -15,7 +15,7 @@ require('TopMenu.php'); ?>
 
         <?php $clients = $dbh->prepare("SELECT * FROM `client`");
                     if ($clients->execute() && $clients->rowCount() > 0): ?>
-                    <form method="post" action="client_delete.php">
+                    <form method="POST" action="client_delete.php">
                         <table class = 'center table-bordered' width="99%" cellspacing="0">
                             <thead>
                             <tr>
@@ -44,7 +44,7 @@ require('TopMenu.php'); ?>
                                     <td align = 'center'>
                                             <a class="btn btn-green" href="client_detail.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>View</span></a>
                                             <a class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit</span></a>
-                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class = 'btn btn-red' name="client_id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
+                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class = 'btn btn-red' name="id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>

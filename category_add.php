@@ -23,9 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-    <!-- Begin Page Content -->
     <div id="page-body">
-        <!-- Page Heading -->
+
         <h2 class='title-text'>Add new user</h2><br>
         <p class="text">This page allows you to add a new user in the system</p>
         <?php if (isset($ERROR)): ?>
@@ -37,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="category_name">Category Name</label>
                 <input type="text" class="form-control" id="category_name" name="category_name" maxlength="255" required value="<?= empty($_POST['category_name']) ? "" : $_POST['category_name'] ?>">
-
+            </div>
             <button type="submit" class="btn btn-blue">Add category</button>
         </form>
     </div>
