@@ -1,31 +1,33 @@
 <?php
 $PAGE_ID = "client";
 $PAGE_HEADER = "Clients";
+/** @var PDO $dbh Database connection */
 
 require('TopMenu.php'); ?>
 
     <div id = page-body>
-            <h2 class = 'title-text'>List of Categories
+            <h2 class = 'title-text'>List of Clients
                 <a href="client_add.php" class = 'btn btn-green'>
                 <span class="button-text text-align-right">Add New Client</span>
                 </a>
             </h2><br>
-            <p class = 'text'>The table below shows all the categories of the products stored in the database.</p>                                   
+            <p class = 'text'>The table below shows all the clients in the database.</p>                                   
 
         <?php $clients = $dbh->prepare("SELECT * FROM `client`");
                     if ($clients->execute() && $clients->rowCount() > 0): ?>
+                    <form method="post" action="client_delete.php">
                         <table class = 'center table-bordered' width="99%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th><span class = 'text'>ID</span></th>
-                                <th><span class = 'text'>First Name</span></th>
-                                <th><span class = 'text'>Last Name</span></th>
-                                <th><span class = 'text'>Address</span></th>
-                                <th><span class = 'text'>Phone</span></th>
-                                <th><span class = 'text'>Email Address</span></th>
-                                <th><span class = 'text'>Subscribed?</span></th>
-                                <th><span class = 'text'>Additional Info</span></th>
-                                <th><span class = 'text'>Actions</span></th>
+                                <th><span class = 'header-text'>ID</span></th>
+                                <th><span class = 'header-text'>First Name</span></th>
+                                <th><span class = 'header-text'>Last Name</span></th>
+                                <th><span class = 'header-text'>Address</span></th>
+                                <th><span class = 'header-text'>Phone</span></th>
+                                <th><span class = 'header-text'>Email Address</span></th>
+                                <th><span class = 'header-text'>Subscribed?</span></th>
+                                <th><span class = 'header-text'>Additional Info</span></th>
+                                <th><span class = 'header-text'>Actions</span></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,9 +50,8 @@ require('TopMenu.php'); ?>
                             <?php endwhile; ?>
                             </tbody>
                         </table>
+                    </form>
                     <?php else: ?>
-                        <p class="mb-4">There are no other client information in the database. </p>
+                        <p class="text">There are no other client information in the database. </p>
                     <?php endif; ?>
     </div>
-</body>
-</html>

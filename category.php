@@ -5,7 +5,6 @@ $PAGE_HEADER = "Product Categories";
 
 require('TopMenu.php'); ?>
 
-    <section id="one">
     <div id = page-body>
             <h2 class = 'title-text'>List of Categories
                 <a href="category_add.php" class = 'btn btn-green'>
@@ -20,9 +19,9 @@ require('TopMenu.php'); ?>
                         <table class = 'center table-bordered' width="60%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th><span class = 'text'>ID</span></th>
-                                <th><span class = 'text'>Category Name</span></th>
-                                <th><span class = 'text'>Actions</span></th>
+                                <th><span class = 'header-text'>ID</span></th>
+                                <th><span class = 'header-text'>Category Name</span></th>
+                                <th><span class = 'header-text'>Actions</span></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,5 +45,3 @@ require('TopMenu.php'); ?>
                         <p class="mb-4">There are no other categories in the database. </p>
                     <?php endif; ?>
     </div>
-        </section>
-<?php require('Footer.php'); ?>
