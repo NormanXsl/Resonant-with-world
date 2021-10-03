@@ -1,8 +1,8 @@
 <?php
 $PAGE_ID = "email";
-$PAGE_HEADER = "Sending email to users";
+$PAGE_HEADER = "Sending email to Clients";
 
-require('header.php');
+require('TopMenu.php');
 
 /** @var PDO $dbh Database connection */
 
@@ -15,22 +15,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sendmail_error = true;
         $sendmail_error_message = 'Message body cannot be empty';
     }
-    if (empty($_POST['user_ids'])) {
+    if (empty($_POST['client_ids'])) {
         $sendmail_error = true;
         $sendmail_error_message = 'You must select at least one user as recipient';
     }
 
     // Getting emails of selected users
-    $query_placeholders = trim(str_repeat("?,", count($_POST['user_ids'])), ",");
-    $query = "SELECT * FROM `users` WHERE `id` in (" . $query_placeholders . ")";
+    $query_placeholders = trim(str_repeat("?,", count($_POST['client_ids'])), ",");
+    $query = "SELECT * FROM `client` WHERE `client_id` in (" . $query_placeholders . ")";
     $stmt = $dbh->prepare($query);
-    if ($stmt->execute($_POST['user_ids'])) {
-        if ($stmt->rowCount() != count($_POST['user_ids'])) {
+    if ($stmt->execute($_POST['client_ids'])) {
+        if ($stmt->rowCount() != count($_POST['client_ids'])) {
             $sendmail_error = true;
             $sendmail_error_message = 'One of the selected user does not exist';
         } else {
             $email_recipients = [];
-            while ($row = $stmt->fetchObject()) $email_recipients[] = $row->fullname . " <" . $row->email . ">";
+            while ($row = $stmt->fetchObject()) $email_recipients[] = $row->client_fname ." " . $row->client_lname . " <" . $row->client_email . ">";
             $email_recipients = implode(",", $email_recipients);
             $email_subject = $_POST['subject'];
             // Process email body when necessary (i.e. on Windows server)
