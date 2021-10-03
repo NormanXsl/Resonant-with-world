@@ -52,9 +52,15 @@ require('connection.php');
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-                               <?= $PAGE_USERNAME ?>
+                            <a class="nav-link" href="logout.php" data-toggle="modal" data-target="#logoutModal">
+                               Logout
                             </a>
+                        </li>
+
+                        <li class="nav-logout">
+                           <p>
+                              Hi, <?= $PAGE_USERNAME ?>
+                            </p>
                         </li>
                     <?php endif; ?>
             </div>

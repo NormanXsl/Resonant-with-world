@@ -131,6 +131,16 @@ ul{
 		color: rgb(224, 224, 224);
 	  }
 
+	  
+	#menu .nav-logout p{
+		color: rgba(91,9,121,1);
+		position: absolute;
+		right: 12vw;
+		top: 0em;
+		padding: 0.8vw;
+		font-size: 20px;
+		font-weight:600;
+	}
 
 	#Title{
 		text-align: center;

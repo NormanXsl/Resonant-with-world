@@ -14,10 +14,6 @@
             </div>
         <p id="disclaimer">Copyright (c) 2021 Resonantwithworld.com. All rights reserved.</p>
     </footer>
-    <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="logout.php">Logout</a>
-            </div>
 <script src="js/scripts.js"></script>
 </body>
 </html>
