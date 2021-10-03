@@ -54,11 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
     <!-- Begin Page Content -->
-    <div class="container-fluid">
+    <div id = page-body>
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 pb-2">Sending email to users</h1>
-        <p class="mb-4">This page allows you to send bulk email to all selected users. </p>
+        <h2 class = 'title-text'>Sending email to users</h2>
 
         <?php if (isset($sendmail_invalid) && $sendmail_invalid): ?>
             <div class="card shadow mb-4">

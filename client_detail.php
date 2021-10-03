@@ -25,7 +25,7 @@ if (!(isset($client_fetched) && $client_fetched)) {
 
 ?>
     <!-- Begin Page Content -->
-    <div class="container-fluid">
+    <div id="page-body">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800 pb-2">Details of client #<?= $client->client_id ?></h1>
 
@@ -53,11 +53,11 @@ if (!(isset($client_fetched) && $client_fetched)) {
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Email</label>
-                    <textarea class="form-control" readonly id="client_email" name="client_email" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_phone'] ?></textarea>
+                    <textarea class="form-control" readonly id="client_email" name="client_email" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Additional Info</label>
-                    <textarea class="form-control" readonly id="client_other_information" name="client_other_information" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_other_information : $_POST['client_phone'] ?></textarea>
+                    <textarea class="form-control" readonly id="client_other_information" name="client_other_information" maxlength="500"><?= empty($_POST['client_other_information']) ? $client->client_other_information : $_POST['client_other_information'] ?></textarea>
                 </div>
                 <div class="form-group">
                 <input type="checkbox" readonly id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed'] ?>">
@@ -65,5 +65,3 @@ if (!(isset($client_fetched) && $client_fetched)) {
             </div>
     </div>
     <!-- /.container-fluid -->
-
-<?php require('footer.php'); ?>

@@ -8,14 +8,9 @@ require('TopMenu.php');
 ?>
 <div id = page-body>
         <h2 class = 'title-text'>Sending email to users</h2>
-        <p class="mb-4">This page allows you to send bulk email to all selected users. </p>
         <form method="post" action="email_send.php" id="send-emails">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Step 1: Select users you would like to send emails to</h6>
-                </div>
+                    <p class="text">Step 1: Select users you would like to send emails to</p>
                 <div class="card-body">
-                    <div class="table-responsive">
                         <?php $clients = $dbh->prepare("SELECT * FROM `client` WHERE client_subscribed = 1");
                         if ($clients->execute() && $clients->rowCount() > 0): ?>
                             <table class="center table-bordered" width="90%" cellspacing="0">
@@ -49,25 +44,16 @@ require('TopMenu.php');
                         <?php else: ?>
                             <p class="mb-4">No clients subscribed. </p>
                         <?php endif; ?>
-                    </div>
                 </div>
-            </div>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Step 2: Compose the email and send</h6>
-                </div>
-                <div class="card-body">
                     <div class="form-group">
                         <label for="sendmailSubject">Subject</label>
                         <input type="text" class="form-control" id="sendmailSubject" name="subject" placeholder="Latest newsletter!" required>
                     </div>
                     <div class="form-group">
                         <label for="sendmailMessage">Message body</label>
-                        <textarea class="form-control" id="sendmailMessage" name="body" rows="5" placeholder="Dear Valued Customer, &#10;&#10;...&#10;&#10;Cheers, Resonant With World Pty Ltd." required></textarea>
+                        <textarea style="height:120px" class="form-control" id="sendmailMessage" name="body" rows="5" placeholder="Dear Valued Customer, &#10;&#10;...&#10;&#10;Cheers, Resonant With World Pty Ltd." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-blue"><span class = 'button-text'>Send</span></button>
-                </div>
-            </div>
         </form>
     </div>
-<?php require('Footer.php'); ?>

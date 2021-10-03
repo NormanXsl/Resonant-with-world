@@ -24,9 +24,9 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
 
 ?>
     <section id="one">
-    <div id="page-body">
-        <!-- Page Heading -->
-        <h2 class="title-text">Detail of category #<?= $category->category_id ?></h2>
+    <div id=page-body>
+
+    <h2 class="title-text">Detail of category #<?= $category->category_id ?></h2>
         <p class="text">This page allows you to add a new category to the system</p>
 
         <div class="form-row">

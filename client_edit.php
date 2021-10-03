@@ -87,37 +87,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post" id="edit-clients" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="clientFName">First Name</label>
+                    <label for="client_fname">First Name</label>
                     <div class="input-group">
                     <input type="text" class="form-control" id="client_fname" name="client_fname" maxlength="255" required value="<?= empty($_POST['client_fname']) ? $client->client_fname : $_POST['client_fname'] ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="clientLName">Last Name</label>
+                    <label for="client_lname">Last Name</label>
                     <div class="input-group">
                     <input type="text" class="form-control" id="client_lname" name="client_lname" maxlength="255" required value="<?= empty($_POST['client_lname']) ? $client->client_lname : $_POST['client_lname'] ?>">
                     </div>
                 </div>
     
                 <div class="form-group">
-                    <label for="clientAddress">Address</label>
+                    <label for="client_address">Address</label>
                     <input type="text" class="form-control" id="client_address" name="client_address" maxlength="255" required value="<?= empty($_POST['client_address']) ? $client->client_address : $_POST['client_address'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="clientPhone">Phone</label>
-                    <textarea class="form-control" id="client_phone" name="client_phone" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
+                    <label for="client_phone">Phone</label>
+                    <textarea class="form-control" id="client_phone" name="client_phone" maxlength="16"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="clientPhone">Email</label>
-                    <textarea class="form-control" id="client_email" name="client_email" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?></textarea>
+                    <label for="client_email">Email</label>
+                    <textarea class="form-control" id="client_email" name="client_email" maxlength="255"><?= empty($_POST['client_email']) ? $client->client_email : $_POST['client_email'] ?></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="clientPhone">Additional Info</label>
-                    <textarea class="form-control" id="client_other_information" name="client_other_information" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_other_information : $_POST['client_other_information'] ?></textarea>
+                    <label for="client_other_information">Additional Info</label>
+                    <textarea class="form-control" id="client_other_information" name="client_other_information" maxlength="500"><?= empty($_POST['client_other_information']) ? $client->client_other_information : $_POST['client_other_information'] ?></textarea>
                 </div>
                 <div class="form-group">
-                <input type="checkbox" readonly id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed'] ?>">
-                <label for="sub">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
+                <input type="checkbox" id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed'] ?>">
+                <label for="client_subscribed">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
             </div>
                 <button type="submit" class="btn btn-blue">Submit changes</button>
         </form>
