@@ -1,0 +1,19 @@
+#product .cate,#product .list{ width:1200px; margin: 0 auto;}
+#product .cate a{  margin-right:10px; color:#000; padding:10px}
+#product .list .item{width:250px;margin:10px; border:1px solid #F5F5F5; padding: 10px; }
+#product .list .item .img{ width:100% }
+#product .list .item img{width:100%}
+#product .list{display:flex;flex-wrap: wrap;flex-direction:row;}
+#product .list .item .name{margin-top: 10px;}
+#product .list .item .price{margin-top: 10px; font-size: 20px; font-weight: bold; color: #FF0000;}
+#product .list .item .btn{display:flex; justify-content: space-between; margin-top: 10px;}
+#product .list .item .btn a{display: block; text-decoration: none; border-radius: 5px;color: #000;}
+#product .list .item .btn a.detail{background-color: rgb(241, 197, 50); padding: 5px 10px;}
+#product .list .item .btn a.cart{background-color: rgb(245, 114, 114); padding: 5px 10px;}
+#product .list .item .star{margin-top: 10px; display: flex;}
+#product .list .item .star img{width: 32px;}
+#product .list .item .quality{display: flex;padding: 10px; justify-content: right;}
+#product .list .item .quality input{width:100px; text-align: center;}
+#product .page{width: 1200px; margin: 0 auto; padding: 20px; text-align: center;}
+#product .page a{color:rgb(80, 80, 80); text-decoration: none;}
+#product .page a.cur{color: #FF0000; font-weight: bold;}
