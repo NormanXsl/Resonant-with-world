@@ -56,10 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
     <!-- Begin Page Content -->
-    <div class="container-fluid">
+    <div id="page-body">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 pb-2">Edit category #<?= $category->category_id ?></h1>
-        <p class="mb-4">This page allows you to add a new category to the system</p>
+        <h2 class = 'title-text'>Edit category #<?= $category->category_id ?></h2>
         <?php if (isset($ERROR)): ?>
             <div class="card mb-4 border-left-danger">
                 <div class="card-body">Cannot modify the category due to the following error:<br><code>
@@ -76,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="input-group">
                 <input type="text" class="form-control" id="category_name" name="category_name" maxlength="255" required value="<?= empty($_POST['category_name']) ? $category->category_name : $_POST['category_name'] ?>">
                 </div>
-            </div>
         </div>
         <button type="submit" class="btn btn-blue">Submit changes</button>
 

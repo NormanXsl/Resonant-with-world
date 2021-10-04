@@ -27,7 +27,10 @@ if (!(isset($client_fetched) && $client_fetched)) {
     <!-- Begin Page Content -->
     <div id="page-body">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 pb-2">Details of client #<?= $client->client_id ?></h1>
+        <h2 class="title-text">Details of client #<?= $client->client_id ?></h2>
+        <a class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit client detail</span></a>
+
+        <br>
 
         <div class="form-row">
                 <div class="form-group">

@@ -27,8 +27,8 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
     <div id=page-body>
 
     <h2 class="title-text">Detail of category #<?= $category->category_id ?></h2>
-        <p class="text">This page allows you to add a new category to the system</p>
-
+    <a class="btn btn-blue" href="category_edit.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit this category</span></a>
+        <br>
         <div class="form-row">
             <div class="form-group">
                 <label for="category_name">Category Name</label>

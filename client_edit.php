@@ -73,8 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Begin Page Content -->
     <div id="page-body">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 pb-2">Edit client #<?= $client->client_id ?></h1>
-        <p class="mb-4">This page allows you to add a new client to the system</p>
+        <h2 class = 'title-text'>Edit client #<?= $client->client_id ?></h2>
         <?php if (isset($ERROR)): ?>
             <div class="card mb-4 border-left-danger">
                 <div class="card-body">Cannot modify the client due to the following error:<br><code>
