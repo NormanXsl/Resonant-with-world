@@ -26,8 +26,8 @@ require('TopMenu.php'); ?>
                                 <th><span class = 'header-text'>Phone</span></th>
                                 <th><span class = 'header-text'>Email Address</span></th>
                                 <th><span class = 'header-text'>Subscribed?</span></th>
-                                <th><span class = 'header-text'>Additional Info</span></th>
-                                <th><span class = 'header-text'>Actions</span></th>
+                                <th style="width: 200px;"><span class = 'header-text'>Additional Info</span></th>
+                                <th style="width: 250px;"><span class = 'header-text'>Actions</span></th>
                             </tr>
                             </thead>
                             <tbody>
