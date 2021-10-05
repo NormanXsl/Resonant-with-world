@@ -23,8 +23,8 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
 }
 
 ?>
-    <section id="one">
-    <div id=page-body>
+    <!-- <section id="one"> -->
+    <div id= "header" class = container>
 
     <h2 class="title-text">Detail of category #<?= $category->category_id ?></h2>
     <a class="btn btn-blue" href="category_edit.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit this category</span></a>
@@ -38,5 +38,5 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
             </div>
         </div>
     </div>
-    </section>
+    <!-- </section> -->
 <?php require('Footer.php'); ?>
