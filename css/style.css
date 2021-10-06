@@ -588,5 +588,57 @@ ul{
 		padding-left: 1rem;
 		margin-right: auto;
 		margin-left: auto;
+		position: relative;
+	  }
+
+	  .photo-shoot-container{
+		  position: relative;
+	  }
+
+
+	  table.photo-shoot-table,
+	  table.photo-shoot-table th,
+	  table.photo-shoot-table td {
+		  border: 1px solid black;
 	  }
 	  
+	  table.photo-shoot-table td {
+		  padding: 0.5em;
+	  }
+	  
+	  .center {
+		  width: fit-content;
+		  margin: 0 auto;
+	  }
+	  
+	  .aligned-form {
+		  display: table;
+	  }
+	  
+	  .aligned-form div.row {
+		  display: table-row;
+	  }
+	  
+	  .aligned-form label,
+	  .aligned-form input {
+		  display: table-cell;
+	  }
+	  
+	  .aligned-form label {
+		  padding: 0.5em 1em 0.5em 0;
+		  text-align: right;
+	  }
+	  
+	  .row {
+		  padding-top: 1em;
+		  padding-bottom: 1em;
+	  }
+	  
+	  #photo-shoot-title{
+		  text-align: center;
+	  }
+
+	  .row {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}

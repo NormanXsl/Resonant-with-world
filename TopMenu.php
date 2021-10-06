@@ -44,6 +44,12 @@ require('connection.php');
                         <a <?= ($PAGE_ID == 'category add') ? ' active' : '' ?> href = 'category_add.php'>Add new category</a>
                     </div>
                 </li>
+                <li class = dropdown <?= ($PAGE_ID == 'photo-shoot' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Photo  Shoot</a>
+                    <div class="dropdown-content">
+                        <a <?= ($PAGE_ID == 'photo shoot insert') ? ' active' : '' ?> href = 'photo_shoot.php'>List all projects</a>
+                        <a <?= ($PAGE_ID == 'photo shoot list') ? ' active' : '' ?> href = 'photo_shoot_insert.php'>Add new project</a>
+                    </div>
+                </li>
                 </ul>
                 <?php if (empty($PAGE_USERNAME)): ?>
                         <li class="nav-item">
