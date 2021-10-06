@@ -37,3 +37,18 @@ if (!isset($PAGE_ID) || $PAGE_ID !== 'login') {
         }
     }
 }
+
+function friendlyError($e) {
+    return "<div class=\"error-message center\">" .
+        "<b>Error</b><br>" .
+        "Please contact system administrator. " .
+        "<pre>Error message: <br>" . $e . "</pre>" .
+        "</div>";
+}
+
+try {
+    $dbh = new PDO($dsn, $db_username, $db_passwd);
+} catch (PDOException $e) {
+    die(friendlyError($e->getMessage()));
+}
+
