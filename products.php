@@ -1,6 +1,6 @@
-
 <?php
 $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
+$PAGE_ID = 'products';
 require('TopMenu.php');
 $pagesize = 8; //每页显示数量
 $page = intval($_GET['page']);//当前页码
