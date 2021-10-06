@@ -24,12 +24,13 @@ if (!(isset($client_fetched) && $client_fetched)) {
 }
 
 ?>
+<html>
     <!-- Begin Page Content -->
     <div id="page-body">
         <!-- Page Heading -->
         <h2 class="title-text">Details of client #<?= $client->client_id ?></h2>
-        <a class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit client detail</span></a>
-
+        <a id = "editbutton" class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit client detail</span></a>
+        <button id = "printpagebutton" onClick="printpage()" class="btn btn-green"><span class = 'button-text'>Generate as PDF</span></button>
         <br>
 
         <div class="form-row">
@@ -67,4 +68,6 @@ if (!(isset($client_fetched) && $client_fetched)) {
                 <label for="sub">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
             </div>
     </div>
-    <!-- /.container-fluid -->
+    <script src="js/scripts.js"></script>
+
+</html>

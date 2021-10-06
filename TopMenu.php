@@ -23,8 +23,9 @@ require('connection.php');
     <title>Resonant With World</title>
 </head>
 <body>
-    <section id="header-wrapper">
+    <section id="header-wrapper hide-button-when-print">
         <div id="header" class="container">
+            <div id = menuBar>
             <div id="menu">
                 <li class="logo"><a href="index.php">Resonant with world</a></li>
                 <ul>
@@ -64,4 +65,6 @@ require('connection.php');
                         </li>
                     <?php endif; ?>
             </div>
+            </div>
+            
     </section>

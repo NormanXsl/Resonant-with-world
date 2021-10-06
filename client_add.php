@@ -40,8 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div id="page-body">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800 pb-2">Add new client</h1>
-        <p class="mb-4">This page allows you to add a new user in the system</p>
+        <h2 class="title-text">Add new client</h2>
+        <br>
+        <p class="text">This page allows you to add a new clients to the system</p>
         <?php if (isset($ERROR)): ?>
         <div class="card mb-4 border-left-danger">
             <div class="card-body">Cannot add new user due to the following error:<br><code><?= $ERROR ?></code></div>
