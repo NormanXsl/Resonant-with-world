@@ -36,4 +36,3 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
             </div>
         </div>
     </div>
-<?php require('Footer.php'); ?>

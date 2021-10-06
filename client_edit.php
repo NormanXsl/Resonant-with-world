@@ -122,4 +122,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 
-<?php require('Footer.php'); ?>
