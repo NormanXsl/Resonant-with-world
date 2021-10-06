@@ -22,3 +22,25 @@ $('form#send-emails').submit(function () {
         return false;
     }
 });
+
+// Simple way to produce pdf of webpage
+function printpage() {
+
+    // get ids of buttons/menus needed to hide when outputting as pdf
+    var printButton = document.getElementById("printpagebutton");
+    var editButton = document.getElementById("editbutton");
+    var menuBar = document.getElementById("menuBar");
+
+    // hide the elements/objects from view before printing
+    printButton.style.visibility = 'hidden';
+    editButton.style.visibility = 'hidden';
+    menuBar.style.visibility = 'hidden';
+
+    window.print()
+
+    // show them after the button is clicked (when trying to output as pdf)
+    printButton.style.visibility = 'visible';
+    editButton.style.visibility = 'visible';
+    menuBar.style.visibility = 'visible';
+
+}
