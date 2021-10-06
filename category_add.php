@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div id="page-body">
 
-        <h2 class='title-text'>Add new user</h2><br>
-        <p class="text">This page allows you to add a new user in the system</p>
+        <h2 class='title-text'>Add new category</h2><br>
+        <p class="text">This page allows you to add a new category for products in the system</p>
         <?php if (isset($ERROR)): ?>
         <div class="card mb-4 border-left-danger">
             <div class="card-body">Cannot add new user due to the following error:<br><code><?= $ERROR ?></code></div>
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="category_name">Category Name</label>
                 <input type="text" class="form-control" id="category_name" name="category_name" maxlength="255" required value="<?= empty($_POST['category_name']) ? "" : $_POST['category_name'] ?>">
             </div>
-            <button type="submit" class="btn btn-blue">Add category</button>
+            <button type="submit" class="btn btn-blue"><span class = 'button-text'>Add category</span></button>
         </form>
     </div>
     <!-- /.container-fluid -->

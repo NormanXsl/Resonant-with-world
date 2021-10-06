@@ -7,9 +7,9 @@ require('TopMenu.php');
 /** @var PDO $dbh Database connection */
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['category_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `category` WHERE `category_id` = ?");
-    if ($stmt->execute([$_GET['id']])) {
+    if ($stmt->execute([$_GET['category_id']])) {
         if ($stmt->rowCount() == 1) {
             $category = $stmt->fetchObject();
 
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (empty($serverSideErrors)) {
             $dbh->commit();
-            header("Location: category_detail.php?id=" . $modifiedCategoryId);
+            header("Location: category_detail.php?category_id=" . $modifiedCategoryId);
             exit();
         } else {
             $dbh->rollBack();

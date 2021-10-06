@@ -7,9 +7,9 @@ require('TopMenu.php');
 /** @var PDO $dbh Database connection */
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['client_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `client` WHERE `client_id` = ?");
-    if ($stmt->execute([$_GET['id']])) {
+    if ($stmt->execute([$_GET['client_id']])) {
         if ($stmt->rowCount() == 1) {
             $client = $stmt->fetchObject();
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (empty($serverSideErrors)) {
             $dbh->commit();
-            header("Location: client_detail.php?id=" . $modifiedClientId);
+            header("Location: client_detail.php?client_id=" . $modifiedClientId);
             exit();
         } else {
             $dbh->rollBack();
@@ -104,11 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group">
                     <label for="client_phone">Phone</label>
-                    <textarea class="form-control" id="client_phone" name="client_phone" maxlength="16"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
+                    <input type="text" class="form-control" id="client_phone" name="client_phone" maxlength="16" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="client_email">Email</label>
-                    <textarea class="form-control" id="client_email" name="client_email" maxlength="255"><?= empty($_POST['client_email']) ? $client->client_email : $_POST['client_email'] ?></textarea>
+                    <input type="text" class="form-control" id="client_email" name="client_email" maxlength="255" required value="<?= empty($_POST['client_email']) ? $client->client_email : $_POST['client_email'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="client_other_information">Additional Info</label>

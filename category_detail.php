@@ -7,9 +7,9 @@ require('TopMenu.php');
 /** @var PDO $dbh Database connection */
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['category_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `category` WHERE `category_id` = ?");
-    if ($stmt->execute([$_GET['id']])) {
+    if ($stmt->execute([$_GET['category_id']])) {
         if ($stmt->rowCount() == 1) {
             $category = $stmt->fetchObject();
             $cateogry_fetched = true;
@@ -25,7 +25,7 @@ if (!(isset($cateogry_fetched) && $cateogry_fetched)) {
 ?>
     <div id = page-body>
     <h2 class="title-text">Detail of category #<?= $category->category_id ?></h2>
-    <a class="btn btn-blue" href="category_edit.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit this category</span></a>
+    <a class="btn btn-blue" href="category_edit.php?category_id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit this category</span></a>
         <br>
         <div class="form-row">
             <div class="form-group">

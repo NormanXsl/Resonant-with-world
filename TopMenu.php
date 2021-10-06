@@ -23,7 +23,7 @@ require('connection.php');
     <title>Resonant With World</title>
 </head>
 <body>
-    <section id="header-wrapper hide-button-when-print">
+    <section id="header-wrapper">
         <div id="header" class="container">
             <div id = menuBar>
             <div id="menu">

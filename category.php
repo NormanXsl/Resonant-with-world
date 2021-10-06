@@ -30,9 +30,9 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'><?= $category->category_id ?></span></td>
                                     <td><span class = 'table-text'><code><?= $category->category_name ?></code></span></td>
                                     <td align = 'center'>
-                                            <a class="btn btn-green" href="category_detail.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>View</span></a>
-                                            <a class="btn btn-blue" href="category_edit.php?id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit</span></a>
-                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this category?")' class = 'btn btn-red' name="id" value="<?= $category->category_id ?>"><span class = 'button-text'>Delete</span></button>
+                                            <a class="btn btn-green" href="category_detail.php?category_id=<?= $category->category_id ?>" ><span class = 'button-text'>View</span></a>
+                                            <a class="btn btn-blue" href="category_edit.php?category_id=<?= $category->category_id ?>" ><span class = 'button-text'>Edit</span></a>
+                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this category?")' class = 'btn btn-red' name="category_id" value="<?= $category->category_id ?>"><span class = 'button-text'>Delete</span></button>
 
                                         </td>
                                 </tr>
@@ -42,6 +42,6 @@ require('TopMenu.php'); ?>
                         </form>
 
                     <?php else: ?>
-                        <p class="mb-4">There are no other categories in the database. </p>
+                        <p class="text">There are no other categories in the database. </p>
                     <?php endif; ?>
     </div>

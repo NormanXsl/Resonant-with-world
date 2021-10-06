@@ -7,9 +7,9 @@ require('TopMenu.php');
 /** @var PDO $dbh Database connection */
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['client_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `client` WHERE `client_id` = ?");
-    if ($stmt->execute([$_GET['id']])) {
+    if ($stmt->execute([$_GET['client_id']])) {
         if ($stmt->rowCount() == 1) {
             $client = $stmt->fetchObject();
 
@@ -29,7 +29,7 @@ if (!(isset($client_fetched) && $client_fetched)) {
     <div id="page-body">
         <!-- Page Heading -->
         <h2 class="title-text">Details of client #<?= $client->client_id ?></h2>
-        <a id = "editbutton" class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit client detail</span></a>
+        <a id = "editbutton" class="btn btn-blue" href="client_edit.php?client_id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit client detail</span></a>
         <button id = "printpagebutton" onClick="printpage()" class="btn btn-green"><span class = 'button-text'>Generate as PDF</span></button>
         <br>
 
@@ -53,11 +53,11 @@ if (!(isset($client_fetched) && $client_fetched)) {
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Phone</label>
-                    <textarea class="form-control" readonly id="client_phone" name="client_phone" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?></textarea>
+                    <input type="text" class="form-control" readonly id="client_phone" name="client_phone" maxlength="64" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Email</label>
-                    <textarea class="form-control" readonly id="client_email" name="client_email" maxlength="64"><?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?></textarea>
+                    <input type="text" class="form-control" readonly id="client_email" name="client_email" maxlength="64" required value="<?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Additional Info</label>

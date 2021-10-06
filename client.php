@@ -42,9 +42,9 @@ require('TopMenu.php'); ?>
                                     <td align = 'center'><span class = 'table-text'><code><?= $client->client_subscribed ?></code></span></td>
                                     <td><span class = 'table-text'><code><?= $client->client_other_information ?></code></span></td>
                                     <td align = 'center'>
-                                            <a class="btn btn-green" href="client_detail.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>View</span></a>
-                                            <a class="btn btn-blue" href="client_edit.php?id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit</span></a>
-                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class = 'btn btn-red' name="id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
+                                            <a class="btn btn-green" href="client_detail.php?client_id=<?= $client->client_id ?>" ><span class = 'button-text'>View</span></a>
+                                            <a class="btn btn-blue" href="client_edit.php?client_id=<?= $client->client_id ?>" ><span class = 'button-text'>Edit</span></a>
+                                            <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class = 'btn btn-red' name="client_id" value="<?= $client->client_id ?>"><span class = 'button-text'>Delete</span></button>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
