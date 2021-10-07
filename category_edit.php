@@ -40,9 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $modifiedCategoryId
         ];
 
+        $stmt->execute($parameters);
         
-        if ($stmt->execute($parameters)) {
+        if (empty($serverSideErrors)) {
+            $dbh->commit();
             header("Location: category_detail.php?category_id=" . $modifiedCategoryId);
+            exit();
+        } else {
+            $dbh->rollBack();
+            $ERROR = implode("</li><li>", $serverSideErrors);
         }
     }
     

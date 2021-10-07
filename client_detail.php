@@ -35,27 +35,27 @@ if (!(isset($client_fetched) && $client_fetched)) {
                 <div class="form-group">
                     <label for="clientFName">First Name</label>
                     <div class="input-group">
-                    <input type="text" class="form-control" readonly id="client_fname" name="client_fname" maxlength="255" required value="<?= empty($_POST['client_fname']) ? $client->client_fname : $_POST['client_fname'] ?>">
+                    <input type="text" class="form-control" readonly id="client_fname" name="client_fname" maxlength="255" required value="<?= $client->client_fname ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="clientLName">Last Name</label>
                     <div class="input-group">
-                    <input type="text" class="form-control" readonly id="client_lname" name="client_lname" maxlength="255" required value="<?= empty($_POST['client_lname']) ? $client->client_lname : $_POST['client_lname'] ?>">
+                    <input type="text" class="form-control" readonly id="client_lname" name="client_lname" maxlength="255" required value="<?= $client->client_lname ?>">
                     </div>
                 </div>
     
                 <div class="form-group">
                     <label for="clientAddress">Address</label>
-                    <input type="text" class="form-control" readonly id="client_address" name="client_address" maxlength="255" required value="<?= empty($_POST['client_address']) ? $client->client_address : $_POST['client_address'] ?>">
+                    <input type="text" class="form-control" readonly id="client_address" name="client_address" maxlength="255" required value="<?= $client->client_address ?>">
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Phone</label>
-                    <input type="text" class="form-control" readonly id="client_phone" name="client_phone" maxlength="16" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
+                    <input type="text" class="form-control" readonly id="client_phone" name="client_phone" maxlength="16" required value="<?= $client->client_phone ?>">
                 </div>
                 <div class="form-group">
                     <label for="clientEmail">Email</label>
-                    <input type="text" class="form-control" readonly id="client_email" name="client_email" maxlength="255" required value="<?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?>">
+                    <input type="text" class="form-control" readonly id="client_email" name="client_email" maxlength="255" required value="<?= $client->client_email ?>">
                 </div>
                 <div class="form-group">
                     <label for="clientAddInfo">Additional Info</label>

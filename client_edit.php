@@ -10,7 +10,7 @@ require('TopMenu.php');
 if (isset($_GET['client_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `client` WHERE `client_id` = ?");
     if ($stmt->execute([$_GET['client_id']])) {
-        if ($stmt->rowCount() == 1) {
+        if ($stmt->rowCount() > 0) {
             $client = $stmt->fetchObject();
 
             $client_fetched = true;
@@ -24,6 +24,7 @@ if (!(isset($client_fetched) && $client_fetched)) {
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+
     $modifiedClientId = $client->client_id;
 
     if (!empty($_POST['client_fname']) &&
@@ -31,11 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         !empty($_POST['client_address']) &&
         !empty($_POST['client_phone']) &&
         !empty($_POST['client_email']) &&
-        !empty($_POST['client_subscribed']) &&
-        !empty($_POST['client_other_information'])) {
-
-        $serverSideErrors = [];
-
+        !empty($_POST['client_subscribed'])) {
 
         // As we'll need to do multiple queries, and need to check if all files are uploaded correctly
         // Better to do a transaction that allows us to revert if any error occurs
@@ -44,13 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "UPDATE `client` SET `client_fname` = ?, `client_lname` = ?, `client_address` = ?, `client_phone` = ?,
          `client_email` = ?,  `client_subscribed` = ?,  `client_other_information` = ? WHERE `client_id` = ?";
         $stmt = $dbh->prepare($query);
-        $subscribed = (int)isset($_POST['client_subscribed[0]']);
-        if (!isset($_POST['client_other_information'])){
-            $client_other_info = "";
-        }
-        else{
-            $client_other_info = $_POST['client_other_information'];
-        }
+        $subscribed = isset($_POST['client_subscribed']) ? 1 : 0;
         $parameters = [
             $_POST['client_fname'],
             $_POST['client_lname'],
@@ -58,14 +49,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['client_phone'],
             $_POST['client_email'],
             $subscribed,
-            $client_other_info,
+            empty($_POST['client_other_information']) ? null : $_POST['client_other_information'],
             $modifiedClientId
         ];
 
-        if ($stmt->execute($parameters)) {
-            header("Location: client_detail.php?client_id=" . $modifiedClientId);
-        }
+        $stmt->execute($parameters);
 
+        if (empty($serverSideErrors)) {
+            $dbh->commit();
+            header("Location: client_detail.php?client_id=" . $modifiedClientId);
+            exit();
+        } else {
+            $dbh->rollBack();
+            $ERROR = implode("</li><li>", $serverSideErrors);
+        }
     }
 }
 
@@ -117,10 +114,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                 <?php $subscribed = $client->client_subscribed;
                  if ($subscribed == 0): ?>
-                    <input type="checkbox" id="client_subscribed" name="client_subscribed[0]" value=1>
+                    <input type="checkbox" id="client_subscribed" name="client_subscribed" value=1>
                 <?php $subscribed = $client->client_subscribed;
                 elseif($subscribed == 1): ?>
-                    <input type="checkbox" id="client_subscribed" name="client_subscribed[0]" value=1 checked>
+                    <input type="checkbox" id="client_subscribed" name="client_subscribed" value=1 checked>
                 <?php endif; ?>
                 <label for="client_subscribed">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
             </div>
