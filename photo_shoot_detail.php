@@ -59,7 +59,7 @@ if (!(isset($row_fetched) && $row_fetched)) {
         </div>
         <div class="form-group">
             <label for="Client">Client</label>
-            <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" value="<?= empty($_POST['client_fk']) ? "" : $_POST['client_fk'] ?>">
+            <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" value="<?= empty($_POST['client_fk']) ? $row->client_fk: $_POST['client_fk'] ?>">
         </div>
     </div>
 </div>
