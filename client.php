@@ -39,7 +39,12 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'><code><?= $client->client_address ?></code></span></td>
                                     <td><span class = 'table-text'><code><?= $client->client_phone ?></code></span></td>
                                     <td><span class = 'table-text'><code><?= $client->client_email ?></code></span></td>
-                                    <td align = 'center'><span class = 'table-text'><code><?= $client->client_subscribed ?></code></span></td>
+                                    <td align = 'center'>
+                                        <?php if ($client->client_subscribed == 0): ?>
+                                            &#10006;</td>
+                                        <?php elseif($client->client_subscribed == 1): ?>
+                                            &#10004;</td>
+                                        <?php endif; ?>
                                     <td><span class = 'table-text'><code><?= $client->client_other_information ?></code></span></td>
                                     <td align = 'center'>
                                             <a class="btn btn-green" href="client_detail.php?client_id=<?= $client->client_id ?>" ><span class = 'button-text'>View</span></a>

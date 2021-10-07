@@ -10,9 +10,8 @@ require('TopMenu.php');
 if (isset($_GET['client_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `client` WHERE `client_id` = ?");
     if ($stmt->execute([$_GET['client_id']])) {
-        if ($stmt->rowCount() == 1) {
+        if ($stmt->rowCount() > 0) {
             $client = $stmt->fetchObject();
-
             $client_fetched = true;
 
         }
@@ -24,7 +23,6 @@ if (!(isset($client_fetched) && $client_fetched)) {
 }
 
 ?>
-<html>
     <!-- Begin Page Content -->
     <div id="page-body">
         <!-- Page Heading -->
@@ -53,21 +51,25 @@ if (!(isset($client_fetched) && $client_fetched)) {
                 </div>
                 <div class="form-group">
                     <label for="clientPhone">Phone</label>
-                    <input type="text" class="form-control" readonly id="client_phone" name="client_phone" maxlength="64" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
+                    <input type="text" class="form-control" readonly id="client_phone" name="client_phone" maxlength="16" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="clientPhone">Email</label>
-                    <input type="text" class="form-control" readonly id="client_email" name="client_email" maxlength="64" required value="<?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?>">
+                    <label for="clientEmail">Email</label>
+                    <input type="text" class="form-control" readonly id="client_email" name="client_email" maxlength="255" required value="<?= empty($_POST['client_phone']) ? $client->client_email : $_POST['client_email'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="clientPhone">Additional Info</label>
-                    <textarea class="form-control" readonly id="client_other_information" name="client_other_information" maxlength="500"><?= empty($_POST['client_other_information']) ? $client->client_other_information : $_POST['client_other_information'] ?></textarea>
+                    <label for="clientAddInfo">Additional Info</label>
+                    <input type="text" class="form-control" readonly id="client_other_information" name="client_other_information" maxlength="5000" value="<?= empty($_POST['client_other_information']) ? $client->client_other_information : $_POST['client_other_information'] ?>"/>
                 </div>
                 <div class="form-group">
-                <input type="checkbox" readonly id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed'] ?>">
+                <?php $subscribed = (empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed']);
+                 if ($subscribed == 0): ?>
+                    &#10006;</td>
+                <?php $subscribed = (empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed']);
+                elseif($subscribed == 1): ?>
+                    &#10004;</td>
+                <?php endif; ?>
                 <label for="sub">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
             </div>
     </div>
     <script src="js/scripts.js"></script>
-
-</html>

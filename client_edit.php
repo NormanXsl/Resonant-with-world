@@ -41,11 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Better to do a transaction that allows us to revert if any error occurs
         $dbh->beginTransaction();
 
-        // Update product details
         $query = "UPDATE `client` SET `client_fname` = ?, `client_lname` = ?, `client_address` = ?, `client_phone` = ?,
          `client_email` = ?,  `client_subscribed` = ?,  `client_other_information` = ? WHERE `client_id` = ?";
         $stmt = $dbh->prepare($query);
-        $subscribed = isset($_POST['client_subscribed']) ? 1 : 0;
+        $subscribed = (int)isset($_POST['client_subscribed[0]']);
+        if (!isset($_POST['client_other_information'])){
+            $client_other_info = "";
+        }
+        else{
+            $client_other_info = $_POST['client_other_information'];
+        }
         $parameters = [
             $_POST['client_fname'],
             $_POST['client_lname'],
@@ -53,17 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['client_phone'],
             $_POST['client_email'],
             $subscribed,
-            empty($_POST['client_other_information']) ? null : $_POST['client_other_information'],
+            $client_other_info,
             $modifiedClientId
         ];
 
-        if (empty($serverSideErrors)) {
-            $dbh->commit();
+        if ($stmt->execute($parameters)) {
             header("Location: client_detail.php?client_id=" . $modifiedClientId);
-            exit();
-        } else {
-            $dbh->rollBack();
-            $ERROR = implode("</li><li>", $serverSideErrors);
         }
 
     }
@@ -83,39 +83,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </code></div>
             </div>
         <?php endif; ?>
-        <form method="post" id="edit-clients" enctype="multipart/form-data">
+        <form method="post">
             <div class="form-row">
                 <div class="form-group">
                     <label for="client_fname">First Name</label>
                     <div class="input-group">
-                    <input type="text" class="form-control" id="client_fname" name="client_fname" maxlength="255" required value="<?= empty($_POST['client_fname']) ? $client->client_fname : $_POST['client_fname'] ?>">
+                    <input type="text" class="form-control" id="client_fname" name="client_fname" maxlength="255" required value="<?= $client->client_fname ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="client_lname">Last Name</label>
                     <div class="input-group">
-                    <input type="text" class="form-control" id="client_lname" name="client_lname" maxlength="255" required value="<?= empty($_POST['client_lname']) ? $client->client_lname : $_POST['client_lname'] ?>">
+                    <input type="text" class="form-control" id="client_lname" name="client_lname" maxlength="255" required value="<?= $client->client_lname ?>">
                     </div>
                 </div>
     
                 <div class="form-group">
                     <label for="client_address">Address</label>
-                    <input type="text" class="form-control" id="client_address" name="client_address" maxlength="255" required value="<?= empty($_POST['client_address']) ? $client->client_address : $_POST['client_address'] ?>">
+                    <input type="text" class="form-control" id="client_address" name="client_address" maxlength="255" required value="<?= $client->client_address ?>">
                 </div>
                 <div class="form-group">
                     <label for="client_phone">Phone</label>
-                    <input type="text" class="form-control" id="client_phone" name="client_phone" maxlength="16" required value="<?= empty($_POST['client_phone']) ? $client->client_phone : $_POST['client_phone'] ?>">
+                    <input type="text" class="form-control" id="client_phone" name="client_phone" maxlength="16" required value="<?= $client->client_phone ?>">
                 </div>
                 <div class="form-group">
                     <label for="client_email">Email</label>
-                    <input type="text" class="form-control" id="client_email" name="client_email" maxlength="255" required value="<?= empty($_POST['client_email']) ? $client->client_email : $_POST['client_email'] ?>">
+                    <input type="text" class="form-control" id="client_email" name="client_email" maxlength="255" required value="<?= $client->client_email ?>">
                 </div>
                 <div class="form-group">
                     <label for="client_other_information">Additional Info</label>
-                    <textarea class="form-control" id="client_other_information" name="client_other_information" maxlength="500"><?= empty($_POST['client_other_information']) ? $client->client_other_information : $_POST['client_other_information'] ?></textarea>
+                    <input type="text" class="form-control" id="client_other_information" name="client_other_information" maxlength="5000" value="<?= $client->client_other_information ?>">
                 </div>
                 <div class="form-group">
-                <input type="checkbox" id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? $client->client_subscribed : $_POST['client_subscribed'] ?>">
+                <?php $subscribed = $client->client_subscribed;
+                 if ($subscribed == 0): ?>
+                    <input type="checkbox" id="client_subscribed" name="client_subscribed[0]" value=1>
+                <?php $subscribed = $client->client_subscribed;
+                elseif($subscribed == 1): ?>
+                    <input type="checkbox" id="client_subscribed" name="client_subscribed[0]" value=1 checked>
+                <?php endif; ?>
                 <label for="client_subscribed">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
             </div>
                 <button type="submit" class="btn btn-blue">Submit changes</button>

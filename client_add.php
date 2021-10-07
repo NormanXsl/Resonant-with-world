@@ -16,7 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "INSERT INTO `client` (`client_fname`, `client_lname`, `client_address`, 
         `client_phone`, `client_email`, `client_subscribed`, `client_other_information`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $dbh->prepare($query);
-        $subscribed = isset($_POST['client_subscribed']) ? 1 : 0;
+        $subscribed = empty($_POST['client_subscribed[0]']) ? 1 : 0;
+        if (is_null($_POST['client_other_information'])){
+            $client_other_info = "";
+        }
+        else{
+            $client_other_info = $_POST['client_other_information'];
+        }
+
         $parameters = [
             $_POST['client_fname'],
             $_POST['client_lname'],
@@ -24,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['client_phone'],
             $_POST['client_email'],
             $subscribed,
-            $_POST['client_other_information']
+            $client_other_info
         ];
         if ($stmt->execute($parameters)) {
             header("Location: client.php");
@@ -71,12 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="clientMoreInformation">Additional Info</label>
-                <input type="text" class="form-control" id="client_other_information" name="client_other_information" maxlength="500" value="<?= empty($_POST['client_other_information']) ? "" : $_POST['client_other_information'] ?>">
+                <input type="text" class="form-control" id="client_other_information" name="client_other_information" maxlength="5000" value="<?= empty($_POST['client_other_information']) ? "" : $_POST['client_other_information'] ?>">
             </div>
             <div class="form-group">
-                <input type="checkbox" id="client_subscribed" name="client_subscribed" value="<?= empty($_POST['client_subscribed']) ? 1 : 0 ?>">
-                <label for="sub">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
-            </div>
+            <input type="checkbox" id="client_subscribed" name="client_subscribed[0]" value=1>
+            <label for="client_subscribed">Subscribe to our Newsletter and stay updated on new promotions and events!</label>
+    
+        </div>
             <button type="submit" class="btn btn-blue">Add Client</button>
         </form>
     </div>

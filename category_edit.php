@@ -10,7 +10,7 @@ require('TopMenu.php');
 if (isset($_GET['category_id'])) {
     $stmt = $dbh->prepare("SELECT * FROM `category` WHERE `category_id` = ?");
     if ($stmt->execute([$_GET['category_id']])) {
-        if ($stmt->rowCount() == 1) {
+        if ($stmt->rowCount() > 0) {
             $category = $stmt->fetchObject();
 
             $cateogry_fetched = true;
@@ -40,15 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $modifiedCategoryId
         ];
 
-        $stmt->execute($parameters);
         
-        if (empty($serverSideErrors)) {
-            $dbh->commit();
+        if ($stmt->execute($parameters)) {
             header("Location: category_detail.php?category_id=" . $modifiedCategoryId);
-            exit();
-        } else {
-            $dbh->rollBack();
-            $ERROR = implode("</li><li>", $serverSideErrors);
         }
     }
     
