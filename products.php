@@ -74,7 +74,7 @@ $total = ceil($count / $pagesize);
         <div class="page">
             PAGE NO:
             <?php for($i = 1; $i <= $total; $i++){?>
-            <a <?php if($page == $i){echo "class='cur'";}?> href="/products.php?page=<?php echo $i;?>&cid=<?php echo intval($_GET['cid'])?>"><?php echo $i;?></a>
+            <a <?php if($page == $i){echo "class='cur'";}?> href="./products.php?page=<?php echo $i;?>&cid=<?php echo intval($_GET['cid'])?>"><?php echo $i;?></a>
             <?php
             }
             ?>
