@@ -31,8 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         !empty($_POST['client_lname']) &&
         !empty($_POST['client_address']) &&
         !empty($_POST['client_phone']) &&
-        !empty($_POST['client_email']) &&
-        !empty($_POST['client_subscribed'])) {
+        !empty($_POST['client_email'])) {
 
         // As we'll need to do multiple queries, and need to check if all files are uploaded correctly
         // Better to do a transaction that allows us to revert if any error occurs
@@ -41,7 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "UPDATE `client` SET `client_fname` = ?, `client_lname` = ?, `client_address` = ?, `client_phone` = ?,
          `client_email` = ?,  `client_subscribed` = ?,  `client_other_information` = ? WHERE `client_id` = ?";
         $stmt = $dbh->prepare($query);
-        $subscribed = isset($_POST['client_subscribed']) ? 1 : 0;
+        if (empty($_POST['client_subscribed'])){
+            $subscribed = 0;
+        }else{
+            $subscribed = 1;
+        }
         $parameters = [
             $_POST['client_fname'],
             $_POST['client_lname'],

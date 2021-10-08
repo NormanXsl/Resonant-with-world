@@ -10,12 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         !empty($_POST['client_lname']) && 
         !empty($_POST['client_address']) && 
         !empty($_POST['client_phone']) &&
-        !empty($_POST['client_email']) &&
-        !empty($_POST['client_subscribed'])){
+        !empty($_POST['client_email'])){
         $query = "INSERT INTO `client` (`client_fname`, `client_lname`, `client_address`, 
         `client_phone`, `client_email`, `client_subscribed`, `client_other_information`) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $dbh->prepare($query);
-        $subscribed = (int)isset($_POST['client_subscribed']) ? 1 : 0;
+        if (empty($_POST['client_subscribed'])){
+            $subscribed = 0;
+        }else{
+            $subscribed = 1;
+        }
         $parameters = [
             $_POST['client_fname'],
             $_POST['client_lname'],
