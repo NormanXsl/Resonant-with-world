@@ -63,3 +63,4 @@ require('TopMenu.php'); ?>
         <a class="btn btn-blue" href="client_code.php" ><span class = 'button-text'>Click to see code</span></a>
 
     </div>
+    <?php require('Footer.php'); ?>

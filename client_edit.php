@@ -127,4 +127,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="btn btn-blue">Submit changes</button>
         </form>
     </div>
+    <?php require('Footer.php'); ?>
 

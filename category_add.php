@@ -41,4 +41,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
     <!-- /.container-fluid -->
+    <?php require('Footer.php'); ?>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Layui</title>
+    <title>product</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,6 +11,7 @@
 error_reporting(0);
 $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
 $PAGE_ID = 'products';
+$PAGE_HEADER = "List Products";
 require('TopMenu.php');
 $pagesize = 8; //每页显示数量
 $page = intval($_GET['page']);//当前页码
@@ -87,5 +88,4 @@ $product = $dbh->query($sql);
 
 </script>
 
-</body>
-</html>
+<?php require('Footer.php'); ?>

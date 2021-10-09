@@ -64,5 +64,6 @@ if (!(isset($row_fetched) && $row_fetched)) {
     </div>
 </div>
 <script src="./js/scripts.js"></script>
+<?php require('Footer.php'); ?>
 
 
