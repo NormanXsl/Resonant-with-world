@@ -84,8 +84,4 @@ if (!empty($_POST)) {
         }
     }
 } ?>
-</div>
-</body>
-
-</html>
-
+<?php require('Footer.php'); ?>
