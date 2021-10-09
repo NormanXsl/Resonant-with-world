@@ -10,7 +10,7 @@
     <?php
     error_reporting(0);
     $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
-    $PAGE_ID = 'products';
+    $PAGE_ID = 'products add';
     require('TopMenu.php');
 
     //文件上传
@@ -104,7 +104,6 @@
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
 
-<script>
 </script>
 
 </body>
