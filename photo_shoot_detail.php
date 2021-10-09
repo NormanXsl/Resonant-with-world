@@ -65,3 +65,4 @@ if (!(isset($row_fetched) && $row_fetched)) {
 </div>
 <script src="./js/scripts.js"></script>
 
+

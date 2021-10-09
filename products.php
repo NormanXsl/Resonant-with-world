@@ -6,7 +6,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
 <?php
 error_reporting(0);
 $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
@@ -37,7 +37,8 @@ $product = $dbh->query($sql);
     <br>
     <br>
     <br>
-    <a type="button" href="product_add.php" class="layui-btn">add product</a>
+    <a type="button" href="products_add.php" class="layui-btn">product_add</a>
+    <a href="products_edit_all.php" class="layui-btn layui-btn-warm">products_edit_all</a>
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
         <legend>product list</legend>
     </fieldset>
@@ -73,8 +74,8 @@ $product = $dbh->query($sql);
                 <td><?php echo $v['product_price']?></td>
                 <td><img src="./product_images/<?php if($v['product_id'] > 40){echo $v['product_image_filename'];}else{echo str_replace('png','jpg',$v['product_image_filename']);} ?>" ></td>
                 <td>
-                    <a type="button" href="product_edit.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-blue">edit product</a>
-                    <a type="button" href="product_delete.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-red">delete product</a>
+                    <a type="button" href="products_edit.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-blue">product_edit</a>
+                    <a type="button" href="products_delete.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-red">product_delete</a>
                 </td>
             </tr>
             <?php }?>
@@ -84,6 +85,7 @@ $product = $dbh->query($sql);
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
 
+<script>
 </script>
 
 </body>
