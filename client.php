@@ -59,4 +59,7 @@ require('TopMenu.php'); ?>
                     <?php else: ?>
                         <p class="text">There are no other client information in the database. </p>
                     <?php endif; ?>
+   <br>
+        <a class="btn btn-blue" href="client_code.php" ><span class = 'button-text'>Click to see code</span></a>
+
     </div>

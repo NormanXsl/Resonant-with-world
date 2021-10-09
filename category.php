@@ -44,4 +44,6 @@ require('TopMenu.php'); ?>
                     <?php else: ?>
                         <p class="text">There are no other categories in the database. </p>
                     <?php endif; ?>
+    
+        <a class="btn btn-blue" href="category_code.php" ><span class = 'button-text'>Click to see code</span></a>
     </div>
