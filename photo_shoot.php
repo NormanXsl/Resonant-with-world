@@ -55,6 +55,7 @@ require('TopMenu.php'); ?>
         <p class="text">There are no other photo shoot information in the database. </p>
     <?php endif; ?>
 </div>
+<a class="btn btn-blue" href="photo_shoot_code.php" ><span class = 'button-text'>Click to see code</span></a>
 
 <?php require('Footer.php'); ?>
 
