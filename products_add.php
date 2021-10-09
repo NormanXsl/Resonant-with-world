@@ -46,5 +46,66 @@
         }
     ?>
 </head>
+<body>
 
+<div class="layui-container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>product add</legend>
+    </fieldset>
+
+    <form class="layui-form layui-form-pane"   method="post" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <label class="layui-form-label">UPC</label>
+            <div class="layui-input-block">
+                <input type="text" name="product_UPC" autocomplete="off" placeholder="product_UPC..." class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">name</label>
+            <div class="layui-input-block">
+                <input type="text" name="product_name" autocomplete="off" placeholder="product_name..." class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">price</label>
+            <div class="layui-input-block">
+                <input type="text" name="product_price" autocomplete="off" placeholder="product_price..." class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">filename</label>
+            <div class="layui-input-block">
+                <input type="file" name="product_image_filename" autocomplete="off" placeholder="product_price..." class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit="" lay-filter="demo2">add</button>
+        </div>
+    </form>
+
+</div>
+<script src="//unpkg.com/layui@2.6.8/dist/layui.js">
+
+<script>
+</script>
+
+</body>
 </html>
