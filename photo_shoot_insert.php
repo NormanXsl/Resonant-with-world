@@ -7,20 +7,18 @@ require('TopMenu.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['photo_shoot_name']) &&
-        !empty($_POST['photo_shoot_description']) && 
         !empty($_POST['photo_shoot_datetime']) && 
         !empty($_POST['photo_shoot_quote']) &&
-        !empty($_POST['photo_shoot_other_information']) &&
         !empty($_POST['client_fk'])){
         $query = "INSERT INTO `photo_shoot` (`photo_shoot_name`, `photo_shoot_description`, `photo_shoot_datetime`, 
-        `photo_shoot_quote`, `photo_shoot_other_information`, `client_fk`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        `photo_shoot_quote`, `photo_shoot_other_information`, `client_fk`) VALUES ( ?, ?, ?, ?, ?, ?)";
         $stmt = $dbh->prepare($query);
         $parameters = [
             $_POST['photo_shoot_name'],
-            $_POST['photo_shoot_description'],
+            empty($_POST['photos_shoot_description']) ? null : $_POST['photos_shoot_description'],
             $_POST['photo_shoot_datetime'],
             $_POST['photo_shoot_quote'],
-            $_POST['photo_shoot_other_information'],
+            empty($_POST['photos_shoot_other_information']) ? null : $_POST['photos_shoot_other_information'],
             $_POST['client_fk']
         ];
         if ($stmt->execute($parameters)) {
@@ -68,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="Client">Client</label>
-                <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" value="<?= empty($_POST['client_fk']) ? "" : $_POST['client_fk'] ?>">
+                <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" value=<?= empty($_POST['client_fk']) ? "" : $_POST['client_fk'] ?>>
             </div>
             <button type="submit" class="btn btn-blue">Insert new Photo shoot</button>
         </form>
