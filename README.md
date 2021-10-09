@@ -20,11 +20,13 @@ password: annas
 #### Sovathanak Meas 
 - Client page
 - Category page
+- CSS
 
 #### Shilong Xiao
 - Index page(including top menu and footer)
 - Login page
 - photo shoot page
+- CSS
 
 #### Tianyao Ma
 - Products page
