@@ -30,11 +30,10 @@ require('connection.php');
                 <li class="logo"><a href="index.php">Resonant with world</a></li>
                 <ul>
                     <li <?= ($PAGE_ID == 'home') ? ' active' : '' ?>"><a href="index.php" >Home</a></li>
-                    <li <?= ($PAGE_ID == 'products') ? ' active' : '' ?>"><a href="products_.php" >Product</a></li>
-                    <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 
+                    <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Product</a> 
                     <div class="dropdown-content">
-                        <a <?= ($PAGE_ID == 'products') ? ' active' : '' ?> href = 'products.php'>List all clients</a>
-                        <a <?= ($PAGE_ID == 'products add') ? ' active' : '' ?> href = 'products_add.php'>Add new clients</a>
+                        <a <?= ($PAGE_ID == 'products') ? ' active' : '' ?> href = 'products.php'>List all products</a>
+                        <a <?= ($PAGE_ID == 'products add') ? ' active' : '' ?> href = 'products_add.php'>Add new products</a>
                     </div>
                     <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 
                     <div class="dropdown-content">
