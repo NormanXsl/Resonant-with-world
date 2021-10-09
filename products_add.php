@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
     <?php
     error_reporting(0);
     $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
@@ -39,7 +40,7 @@
             $sql1 = "insert into product_image (product_image_filename,product_fk) VALUES ('{$pata}',$id)";
             $res = $dbh->exec($sql1);
             if($res){
-                echo "<script>alert('success');window.location.href='detail.php';</script>";
+                echo "<script>alert('success');window.location.href='products.php';</script>";
             }else{
                 echo "<script>alert('add error');</script>";
             }

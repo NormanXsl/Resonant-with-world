@@ -33,6 +33,11 @@ require('connection.php');
                     <li <?= ($PAGE_ID == 'products') ? ' active' : '' ?>"><a href="products_.php" >Product</a></li>
                     <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 
                     <div class="dropdown-content">
+                        <a <?= ($PAGE_ID == 'products') ? ' active' : '' ?> href = 'products.php'>List all clients</a>
+                        <a <?= ($PAGE_ID == 'products add') ? ' active' : '' ?> href = 'products_add.php'>Add new clients</a>
+                    </div>
+                    <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 
+                    <div class="dropdown-content">
                         <a <?= ($PAGE_ID == 'client') ? ' active' : '' ?> href = 'client.php'>List all clients</a>
                         <a <?= ($PAGE_ID == 'client add') ? ' active' : '' ?> href = 'client_add.php'>Add new clients</a>
                         <a <?= ($PAGE_ID == 'email send') ? ' active' : '' ?> href = 'email.php'>Send email to clients</a>
