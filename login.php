@@ -25,11 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: " . $_SESSION['referer']);
             }
         } else {
-            echo '<script>alert("Your username and/or password is incorrect. Please try again!")</script>';
+            echo '<script>alert("Your username and/or password is incorrect. Please try again!");
+            window.location.href="login.php"</script>';
         }
         exit();
     } else {
-        echo '<script>alert("Please enter both username and password to login!")</script>';
+        echo '<script>alert("Please enter both username and password to login!");
+        window.location.href="login.php"</script>';
         exit();
     }
 }
