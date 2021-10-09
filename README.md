@@ -22,7 +22,9 @@ password: annas
 - Category page
 
 #### Shilong Xiao
-
+- Index page(including top menu and footer)
+- Login page
+- photo shoot page
 
 #### Tianyao Ma
 - Products page
