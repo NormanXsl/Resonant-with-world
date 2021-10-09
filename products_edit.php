@@ -122,8 +122,3 @@
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
 
-<script>
-</script>
-
-</body>
-</html>

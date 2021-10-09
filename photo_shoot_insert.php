@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="Description">Description</label>
-                <input type="text" class="form-control" id="photo_shoot_description" name="photo_shoot_description" maxlength="255" required value="<?= empty($_POST['photo_shoot_description']) ? "" : $_POST['photo_shoot_description'] ?>">
+                <input type="text" class="form-control" id="photo_shoot_description" name="photo_shoot_description" maxlength="255" value="<?= empty($_POST['photo_shoot_description']) ? "" : $_POST['photo_shoot_description'] ?>">
             </div>
             <div class="form-group">
                 <label for="Datetime">Datetime</label>
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="OtherInformation">Other information</label>
-                <input type="text" class="form-control" id="photo_shoot_other_information" name="photo_shoot_other_information" maxlength="255" required value="<?= empty($_POST['photo_shoot_other_information']) ? "" : $_POST['photo_shoot_other_information'] ?>">
+                <input type="text" class="form-control" id="photo_shoot_other_information" name="photo_shoot_other_information" maxlength="255" value="<?= empty($_POST['photo_shoot_other_information']) ? "" : $_POST['photo_shoot_other_information'] ?>">
             </div>
             <div class="form-group">
                 <label for="Client">Client</label>
