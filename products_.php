@@ -37,7 +37,7 @@ $product = $dbh->query($sql);
     <br>
     <br>
     <br>
-    <a type="button" href="add.php" class="layui-btn">add product</a>
+    <a type="button" href="product_add.php" class="layui-btn">add product</a>
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
         <legend>product list</legend>
     </fieldset>
@@ -73,8 +73,8 @@ $product = $dbh->query($sql);
                 <td><?php echo $v['product_price']?></td>
                 <td><img src="./product_images/<?php if($v['product_id'] > 40){echo $v['product_image_filename'];}else{echo str_replace('png','jpg',$v['product_image_filename']);} ?>" ></td>
                 <td>
-                    <a type="button" href="edit.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-blue">edit product</a>
-                    <a type="button" href="delete.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-red">delete product</a>
+                    <a type="button" href="product_edit.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-blue">edit product</a>
+                    <a type="button" href="product_delete.php?product_id=<?php echo $v['product_id']?>" class="layui-btn layui-btn-primary layui-border-red">delete product</a>
                 </td>
             </tr>
             <?php }?>
