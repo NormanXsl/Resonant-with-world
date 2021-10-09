@@ -1,15 +1,15 @@
 <?php
 $PAGE_ID = "email";
-$PAGE_HEADER = "Sending email to users";
+$PAGE_HEADER = "Sending email to Clients";
 
 require('TopMenu.php');
 
 /** @var PDO $dbh Database connection */
 ?>
 <div id = page-body>
-        <h2 class = 'title-text'>Sending email to users</h2>
+        <h2 class = 'title-text'>Sending email to clients</h2>
         <form method="post" action="email_send.php" id="send-emails">
-                    <p class="text">Step 1: Select users you would like to send emails to</p>
+                    <h3>Select clients you would like to send emails to</h3>
                 <div class="card-body">
                         <?php $clients = $dbh->prepare("SELECT * FROM `client` WHERE client_subscribed = 1");
                         if ($clients->execute() && $clients->rowCount() > 0): ?>
@@ -42,10 +42,10 @@ require('TopMenu.php');
                             </table>
 
                         <?php else: ?>
-                            <p class="mb-4">No clients subscribed. </p>
+                            <p class="text">No clients subscribed. </p>
                         <?php endif; ?>
                 </div>
-                    <h6 class="m-0 font-weight-bold text-primary">Step 2: Compose the email and send</h6>
+                <h3>Compose to email and send to selected clients</h3>
                     <div class="form-group">
                         <label for="sendmailSubject">Subject</label>
                         <input type="text" class="form-control" id="sendmailSubject" name="subject" placeholder="Latest newsletter!" required>
@@ -54,6 +54,6 @@ require('TopMenu.php');
                         <label for="sendmailMessage">Message body</label>
                         <textarea style="height:120px" class="form-control" id="sendmailMessage" name="body" rows="5" placeholder="Dear Valued Customer, &#10;&#10;...&#10;&#10;Cheers, Resonant With World Pty Ltd." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-blue"><span class = 'button-text'>Send</span></button>
+            <button type="submit" class="btn btn-blue"><span class = 'button-text'>Send</span></button>
         </form>
     </div>

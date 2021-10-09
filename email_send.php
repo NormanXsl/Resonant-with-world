@@ -1,5 +1,5 @@
 <?php
-$PAGE_ID = "email";
+$PAGE_ID = "email sned";
 $PAGE_HEADER = "Sending email to Clients";
 
 require('TopMenu.php');
