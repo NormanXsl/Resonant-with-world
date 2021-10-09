@@ -56,8 +56,8 @@ $total = ceil($count / $pagesize);
                         <img src="./media/star.png" />
                     <?php }?>
                 </div>
-                <div class="quality">
-                    <div class="text">Quality:</div>
+                <div class="quantity">
+                    <div class="text">Quantity:</div>
                     <div class="input">
                         <input type="number" value="1" />
                         <div class="icon"></div>
