@@ -41,5 +41,78 @@
 
     ?>
 </head>
+<body>
 
+<div class="layui-container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>product info</legend>
+    </fieldset>
+
+    <form class="layui-form layui-form-pane"   method="post" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <label class="layui-form-label">UPC</label>
+            <div class="layui-input-block">
+                <?php echo $info['product_UPC']?>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">name</label>
+            <div class="layui-input-block">
+                <?php echo $info['product_name']?>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">price</label>
+            <div class="layui-input-block">
+                <?php echo $info['product_price']?>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">filename</label>
+            <div class="layui-input-block">
+
+                <img src="./product_images/<?php if($info['product_id'] > 40){echo $imginfo['product_image_filename'];}else{echo str_replace('png','jpg',$imginfo['product_image_filename']);} ?>" >
+
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 200px">descriptiopn</label>
+            <div class="layui-input-block">
+
+
+            </div>
+        </div>
+
+
+        <div class="layui-form-item">
+            <input type="hidden" name="product_id" value="<?php echo $info['product_id'] ?>">
+
+        </div>
+    </form>
+
+</div>
+<script src="//unpkg.com/layui@2.6.8/dist/layui.js">
+
+<script>
+</script>
+
+</body>
 </html>
