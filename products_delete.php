@@ -1,6 +1,6 @@
 <?php
 $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
-$PAGE_ID = 'products';
+$PAGE_ID = 'delete products';
 require('connection.php');
 $product_id = $_GET['product_id'];
 

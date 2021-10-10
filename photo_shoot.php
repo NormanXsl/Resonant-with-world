@@ -27,7 +27,6 @@ require('TopMenu.php'); ?>
                         <th><span class='header-text'>Datetime</span></th>
                         <th><span class='header-text'>Quote</span></th>
                         <th><span class='header-text'>Other information</span></th>
-                        <th><span class='header-text'>Client</span></th>
                         <th style="width: 300px;"><span class='header-text'>Actions</span></th>
                     </tr>
                 </thead>
@@ -40,7 +39,6 @@ require('TopMenu.php'); ?>
                             <td><span class='table-text'><code><?= $row->photo_shoot_datetime ?></code></span></td>
                             <td><span class='table-text'><code><?= $row->photo_shoot_quote ?></code></span></td>
                             <td><span class='table-text'><code><?= $row->photo_shoot_other_information ?></code></span></td>
-                            <td align='center'><span class='table-text'><code><?= $row->client_fk ?></code></span></td>
                             <td align='center'>
                                 <a class="btn btn-green" href="photo_shoot_detail.php?photo_shoot_id=<?= $row->photo_shoot_id ?>"><span class='button-text'>View</span></a>
                                 <a class="btn btn-blue" href="photo_shoot_update.php?photo_shoot_id=<?= $row->photo_shoot_id ?>"><span class='button-text'>Update</span></a>

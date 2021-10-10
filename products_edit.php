@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,7 @@
     <?php
     error_reporting(0);
     $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
-    $PAGE_ID = 'products';
+    $PAGE_ID = 'edit products';
     require('TopMenu.php');
 
     //文件上传
@@ -110,7 +109,7 @@
 
                 <input type="file" name="product_image_filename" autocomplete="off" placeholder="product_price..." class="layui-input">
                 <img src="./product_images/<?php if($info['product_id'] > 40){echo $imginfo['product_image_filename'];}else{echo str_replace('png','jpg',$imginfo['product_image_filename']);} ?>" >
-                <span>不修改图片不用重新上传</span>
+                <span>You don’t need to re-upload the picture if you don’t modify the picture</span>
             </div>
         </div>
 
