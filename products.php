@@ -56,12 +56,12 @@ $product = $dbh->query($sql);
             </colgroup>
             <thead>
             <tr>
-                <th>product_id</th>
-                <th>product_UPC</th>
-                <th>product_name</th>
-                <th>product_price</th>
-                <th>product_image_filename</th>
-                <th>Set up the</th>
+                <th>ID</th>
+                <th>Product UPC</th>
+                <th>Product name</th>
+                <th>Product price</th>
+                <th>Image filename</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -83,10 +83,10 @@ $product = $dbh->query($sql);
             </tbody>
         </table>
     </div>
+    <a class="btn btn-blue" href="products_code.php" ><span class = 'button-text'>Click to see code</span></a>   
 
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
-
 </script>
-<a class="btn btn-blue" href="products_code.php" ><span class = 'button-text'>Click to see code</span></a>
+
 <?php require('Footer.php'); ?>

@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
     <?php
     error_reporting(0);
-    $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
     $PAGE_ID = 'add products';
     require('TopMenu.php');
 
-    //文件上传
     function img($file='images',$path='./product_images/'){
         if(empty($_FILES[$file])){
             echo "<script>alert('image error');</script>";
@@ -26,7 +24,7 @@
         return $image;
     }
 
-    //如果是表单提交数据
+
         if(!empty($_POST)){
             $data = $_POST;
             $product_UPC = $_POST['product_UPC'];
