@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="Client">Client</label>
-                <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" value=<?= empty($_POST['client_fk']) ? "" : $_POST['client_fk'] ?>>
+                <input type="number" class="form-control" id="client_fk" name="client_fk" maxlength="11" required value=<?= empty($_POST['client_fk']) ? "" : $_POST['client_fk'] ?>>
             </div>
             <button type="submit" class="btn btn-blue">Insert new Photo shoot</button>
         </form>
