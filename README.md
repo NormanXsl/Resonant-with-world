@@ -13,8 +13,8 @@ Developers of this web app are listed as follows:
 
 ## Credentials to access the web page:
 
-Username: annas
-password: annas
+Username: Anna
+password: Anna
 
 ## Contribution of members:
 #### Sovathanak Meas 
