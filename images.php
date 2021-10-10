@@ -18,9 +18,6 @@ if (isset($_GET['product_id'])) {
 
 <div id=page-body>
     <h2 class='title-text'>List of photo shoot records
-        <a href="photo_shoot_insert.php" class='btn btn-green'>
-            <span class="button-text text-align-right">Add New Photo shoot</span>
-        </a>
     </h2><br>
     <p class='text'>The table below shows all the images in the database.</p>
     <?php
