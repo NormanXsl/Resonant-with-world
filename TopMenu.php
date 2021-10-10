@@ -32,7 +32,7 @@ require('connection.php');
                     <li <?= ($PAGE_ID == 'home') ? ' active' : '' ?>"><a href="index.php" >Home</a></li>
                     <li class = dropdown <?= ($PAGE_ID == 'products' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Product</a> 
                     <div class="dropdown-content">
-                        <a <?= ($PAGE_ID == 'edit products') ? ' active' : '' ?> href = 'products.php'>List all products</a>
+                        <a <?= ($PAGE_ID == 'products') ? ' active' : '' ?> href = 'products.php'>List all products</a>
                         <a <?= ($PAGE_ID == 'add products') ? ' active' : '' ?> href = 'products_add.php'>Add new products</a>
                     </div>
                     <li class = dropdown <?= ($PAGE_ID == 'clients' ) ? ' active' : '' ?>"><a class = 'dropbtn'>Client</a> 

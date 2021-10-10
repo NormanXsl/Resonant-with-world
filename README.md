@@ -18,15 +18,25 @@ password: annas
 
 ## Contribution of members:
 #### Sovathanak Meas 
-- Client page
+- Client page (Basic)
+- Client page (Distinction)
 - Category page
+- Database Schema
+- Documentation page
+- Send Email page
 - CSS
 
 #### Shilong Xiao
 - Index page(including top menu and footer)
 - Login page
-- photo shoot page
+- Photo shoot page
+- Images Page
+- Footer page
+- Database Schema
 - CSS
 
 #### Tianyao Ma
-- Products page
+- Products page (Basic)
+- Products page (High Distinction)
+- Products page (Distinction)
+- CSS
