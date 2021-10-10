@@ -39,3 +39,6 @@ password: Anna
 - Products page (Basic)
 - Products page (High Distinction)
 - Products page (Distinction)
+
+#### Reference:
+- https://docs.google.com/document/d/1MbRDmlezNvGC-tAMvSBQXhmRszSHHANAa69yQY_BFKY/edit?usp=sharing
