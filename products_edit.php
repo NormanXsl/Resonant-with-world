@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
     <?php
     error_reporting(0);
-    $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
     $PAGE_ID = 'edit products';
     require('TopMenu.php');
 
-    //文件上传
     function img($file='images',$path='./product_images/'){
         if(empty($_FILES[$file])){
             echo "<script>alert('image error');</script>";
@@ -26,7 +24,6 @@
         return $image;
     }
 
-    //查询要修改的数据
     if(!empty($_GET['product_id'])){
         $sql = "select * from product where product_id = ".$_GET['product_id'];
         $obj = $dbh->query($sql);
@@ -38,18 +35,15 @@
 
 
 
-    //如果是表单提交数据
         if(!empty($_POST)){
             $data = $_POST;
             $product_UPC = $_POST['product_UPC'];
             $product_name = $_POST['product_name'];
             $product_price = $_POST['product_price'];
             $product_id = $_POST['product_id'];
-             //修改产品
             $sql = "UPDATE product set product_UPC = '{$product_UPC}',product_name='$product_name',product_price='{$product_price}' where product_id =  ".$product_id;
             $dbh->exec($sql);
 
-            //是否修改图片
             if(!empty($_FILES['product_image_filename']['name'])){
                 $pata = img('product_image_filename');
                 $sql = "UPDATE product_image set  product_image_filename = '{$pata}' where product_fk = ".$product_id;
