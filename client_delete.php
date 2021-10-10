@@ -4,18 +4,9 @@ require('connection.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['client_id'])) {
-    // Delete image files first
-    $query = "SELECT * FROM `client` WHERE `client_id` = ?";
+    $query = "DELETE FROM `photo_shoot` WHERE `client_fk` = ?";
     $stmt = $dbh->prepare($query);
-    $stmt->execute($_POST['client_id']);
-    while ($image = $stmt->fetchObject()) {
-        $fileFullPath = "product_images" . DIRECTORY_SEPARATOR . $image->filename;
-        unlink($fileFullPath);
-    }
-    
-    $query = "DELETE FROM `photoshoot` WHERE `client_fk` in (" . $query_placeholders . ")";
-    $stmt = $dbh->prepare($query);
-    $stmt->execute($_POST['product_ids']);
+    $stmt->execute([$_POST['client_id']]);
 
     $query = "DELETE FROM `client` WHERE `client_id` = ?";
     $stmt = $dbh->prepare($query);
