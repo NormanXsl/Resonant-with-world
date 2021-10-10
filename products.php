@@ -83,6 +83,7 @@ $product = $dbh->query($sql);
             </tbody>
         </table>
     </div>
+     <a class="btn btn-blue" href="category_code.php" ><span class = 'button-text'>Click to see code</span></a>
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
 
