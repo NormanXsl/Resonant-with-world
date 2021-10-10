@@ -69,21 +69,21 @@
         <div class="layui-form-item">
             <label class="layui-form-label">UPC</label>
             <div class="layui-input-block">
-                <input type="text" name="product_UPC" autocomplete="off" placeholder="product_UPC..." class="layui-input">
+                <input type="text" title="UPC should strictly include 12 numbers" required pattern="[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" name="product_UPC" autocomplete="off" placeholder="product_UPC..." class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">name</label>
             <div class="layui-input-block">
-                <input type="text" name="product_name" autocomplete="off" placeholder="product_name..." class="layui-input">
+                <input type="text" maxlength="255" required name="product_name" autocomplete="off" placeholder="product_name..." class="layui-input">
             </div>
         </div>
 
         <div class="layui-form-item">
             <label class="layui-form-label">price</label>
             <div class="layui-input-block">
-                <input type="text" name="product_price" autocomplete="off" placeholder="product_price..." class="layui-input">
+                <input type="number" max="9999999.99" title="Price should be the format of 8 or 8.00, any additional cents (for price) should be in the format of 7.29 or 9.50" required pattern="[0-9]+(\\.[0-9][0-9]?)?" name="product_price" autocomplete="off" placeholder="product_price..." class="layui-input">
             </div>
         </div>
 
