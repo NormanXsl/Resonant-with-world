@@ -104,6 +104,10 @@ require('TopMenu.php'); ?>
                                     <td align = 'left'><span class = 'table-text'>Images Page(Not fully done)</span></td>
                                     <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
+                                <tr>
+                                    <td align = 'left'><span class = 'table-text'>Login/Logout page</span></td>
+                                    <td><span class = 'table-text'>Shilong Xiao</span></td>
+                                </tr>
                             </tbody>
                         </table>
 

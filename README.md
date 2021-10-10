@@ -39,4 +39,3 @@ password: annas
 - Products page (Basic)
 - Products page (High Distinction)
 - Products page (Distinction)
-- CSS
