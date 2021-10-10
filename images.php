@@ -46,7 +46,7 @@ if (isset($_GET['product_id'])) {
                             <td><span class='table-text'><code><?= $row->product_image_filename ?></code></span></td>
                             <td><span class='table-text'><code><?= $row->product_fk ?></code></span></td>
                             <td align='center'>
-                                <a class="btn btn-green" href="product_edit.php?product_fk=<?= $product->product_id ?>"><span class='button-text'>View</span></a>
+                                <a class="btn btn-green" href="products_edit.php?product_fk=<?= $product->product_id ?>"><span class='button-text'>View</span></a>
                                 <button type="submit" onClick='return confirm("Are you sure you want to delete this image?")' class='btn btn-red' name="image_id" value="<?= $row->image_id ?>"><span class='button-text'>Delete</span></button>
                             </td>
                         </tr>
@@ -58,6 +58,6 @@ if (isset($_GET['product_id'])) {
         <p class="text">There are no other images information in the database. </p>
     <?php endif; ?>
 </div>
-<a class="btn btn-blue" href="photo_shoot_code.php" ><span class = 'button-text'>Click to see code</span></a>
+<a class="btn btn-blue" href="images_code.php" ><span class = 'button-text'>Click to see code</span></a>
 <?php require('Footer.php'); ?>
 
