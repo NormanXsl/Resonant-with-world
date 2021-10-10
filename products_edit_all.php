@@ -108,4 +108,4 @@
 </div>
 <script src="//unpkg.com/layui@2.6.8/dist/layui.js">
 
-<?php require('Footer.php'); ?>
+<?php include'Footer.php'; ?>
