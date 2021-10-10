@@ -101,7 +101,7 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
                                 <tr>
-                                    <td align = 'left'><span class = 'table-text'>Images Page</span></td>
+                                    <td align = 'left'><span class = 'table-text'>Images Page(Not fully done)</span></td>
                                     <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
                             </tbody>
