@@ -47,7 +47,7 @@ if (isset($_GET['product_id'])) {
                             <td><span class='table-text'><code><?= $row->product_fk ?></code></span></td>
                             <td align='center'>
                                 <a class="btn btn-green" href="product_edit.php?product_fk=<?= $product->product_id ?>"><span class='button-text'>View</span></a>
-                                <button type="submit" onClick='return confirm("Are you sure you want to delete this client?")' class='btn btn-red' name="photo_shoot_id" value="<?= $row->photo_shoot_id ?>"><span class='button-text'>Delete</span></button>
+                                <button type="submit" onClick='return confirm("Are you sure you want to delete this image?")' class='btn btn-red' name="image_id" value="<?= $row->image_id ?>"><span class='button-text'>Delete</span></button>
                             </td>
                         </tr>
                     <?php endwhile; ?>
