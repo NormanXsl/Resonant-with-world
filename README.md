@@ -30,3 +30,6 @@ password: annas
 
 #### Tianyao Ma
 - Products page
+
+#### Reference
+- https://docs.google.com/document/d/1MbRDmlezNvGC-tAMvSBQXhmRszSHHANAa69yQY_BFKY/edit?usp=sharing
