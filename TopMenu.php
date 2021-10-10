@@ -54,6 +54,8 @@ require('connection.php');
                         <a <?= ($PAGE_ID == 'photo shoot list') ? ' active' : '' ?> href = 'photo_shoot_insert.php'>Add new project</a>
                     </div>
                 </li>
+                <li <?= ($PAGE_ID == 'images') ? ' active' : '' ?>"><a href="images.php" >Images</a></li>
+                </li>
                 <li <?= ($PAGE_ID == 'documentation') ? ' active' : '' ?>"><a href="documentation.php" >Documentation</a></li>
                 </li>
                 </ul>
