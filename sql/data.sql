@@ -163,7 +163,4 @@ INSERT INTO `product_image` (`image_id`, `product_image_filename`, `product_fk`)
 (44, '222.png', 22);
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(1, 'Kim', SHA2('Kim', 256), 'odio.phasellus@metusurna.edu'),
-(2, 'Kyrie', SHA2('Kyrie', 256), 'velit.justo@phasellus.org'),
-(3, 'Norton', SHA2('Norton', 256), 'aenean@risus.com'),
-(4, 'Marius', SHA2('Marius', 256), 'purus@integerinmagna.net');
+(1, 'Anna', SHA2('Anna', 256), 'annasola@metusurna.edu');
