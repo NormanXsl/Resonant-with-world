@@ -10,7 +10,7 @@
     <?php
     error_reporting(0);
     $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
-    $PAGE_ID = 'products';
+    $PAGE_ID = 'edit all products';
     require('TopMenu.php');
     $pagesize = 8; //每页显示数量
     $page = intval($_GET['page']);//当前页码

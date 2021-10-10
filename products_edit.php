@@ -10,7 +10,7 @@
     <?php
     error_reporting(0);
     $PAGE_ALLOWGUEST = true; // Homepage should allow guest to visit
-    $PAGE_ID = 'products';
+    $PAGE_ID = 'edit products';
     require('TopMenu.php');
 
     //文件上传
