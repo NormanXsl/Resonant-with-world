@@ -49,6 +49,10 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'>Sovathanak Meas, Shilong Xiao</span></td>
                                 </tr>
                                 <tr>
+                                    <td align = 'left'><span class = 'table-text'>CSS</span></td>
+                                    <td><span class = 'table-text'>Shilong Xiao, Sovathanak Meas</span></td>
+                                </tr>
+                                <tr>
                                     <td align = 'left'><span class = 'table-text'>Client Page (Basic)</span></td>
                                     <td><span class = 'table-text'>Sovathanak Meas</span></td>
                                 </tr>
@@ -61,11 +65,19 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'>Sovathanak Meas</span></td>
                                 </tr>
                                 <tr>
-                                    <td align = 'left'><span class = 'table-text'>Photoshoot Page</span></td>
-                                    <td><span class = 'table-text'>Shilong Xiao</span></td>
+                                    <td align = 'left'><span class = 'table-text'>Documentation Page</span></td>
+                                    <td><span class = 'table-text'>Sovathanak Meas</span></td>
+                                </tr>
+                                <tr>
+                                    <td align = 'left'><span class = 'table-text'>Send Email Page</span></td>
+                                    <td><span class = 'table-text'>Sovathanak Meas</span></td>
                                 </tr>
                                 <tr>
                                     <td align = 'left'><span class = 'table-text'>Product Page</span></td>
+                                    <td><span class = 'table-text'>Tianyao Ma</span></td>
+                                </tr>
+                                <tr>
+                                    <td align = 'left'><span class = 'table-text'>Mutlitple product edit Page</span></td>
                                     <td><span class = 'table-text'>Tianyao Ma</span></td>
                                 </tr>
                                 <tr>
@@ -77,20 +89,20 @@ require('TopMenu.php'); ?>
                                     <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
                                 <tr>
-                                    <td align = 'left'><span class = 'table-text'>Mutlitple product edit Page</span></td>
-                                    <td><span class = 'table-text'>Tianyao Ma</span></td>
+                                    <td align = 'left'><span class = 'table-text'>Top  menu</span></td>
+                                    <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
                                 <tr>
-                                    <td align = 'left'><span class = 'table-text'>Documentation Page</span></td>
-                                    <td><span class = 'table-text'>Sovathanak Meas</span></td>
+                                    <td align = 'left'><span class = 'table-text'>Footer</span></td>
+                                    <td><span class = 'table-text'>Shilong Xiao</span></td>
+                                </tr>
+                                <tr>
+                                    <td align = 'left'><span class = 'table-text'>Photoshoot Page</span></td>
+                                    <td><span class = 'table-text'>Shilong Xiao</span></td>
                                 </tr>
                                 <tr>
                                     <td align = 'left'><span class = 'table-text'>Images Page</span></td>
                                     <td><span class = 'table-text'>Shilong Xiao</span></td>
-                                </tr>
-                                <tr>
-                                    <td align = 'left'><span class = 'table-text'>Send Email Page</span></td>
-                                    <td><span class = 'table-text'>Sovathanak Meas</span></td>
                                 </tr>
                             </tbody>
                         </table>
